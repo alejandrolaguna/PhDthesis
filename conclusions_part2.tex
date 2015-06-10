@@ -1,0 +1,39 @@
+
+\chapter*{Conclusions}
+\label{sec:Conclusions_CGM}
+\addcontentsline{toc}{chapter}{Conclusions}
+
+This part of the thesis consisted on parallel work to that of the identification problem in the diabetes context. Foundations for both virtual and experimental identification have been established, and the main contribution of this thesis is now at hand.
+
+Many of the proposed models for diabetic patients suffer from low identifiability. A modification of a literature model was proposed in Chapter \ref{sec:CriticalSelectionOfModels}, but the goal of this model was not to increase current identifiability of the diabetes models but to fit better the physiological properties of the endogenous glucose system of a diabetic patient. Identifiability can be improved in models which have identifiability issues by tuning the conditions of the experiment for better data acquisition properties.
+
+In Chapter \ref{sec:OptimalDesign} a classic optimal experiment design approach was followed for identifiability enhancement. To cope with the inherent problem of model dependance on the experiment results, the procedure was repeated on two different models: the Bergman minimal model and the modified Panunzi's model. The models chosen were amongst the simplest of all the models in literature in order to help in the computation process, which is extremely heavy for the optimal experiment methodology. From the outputs of the experiment design for both models qualitative results were extracted and merged into diabetes experiments guidelines for identifiability optimization.
+
+Three days of monitoring were considered optimal for the current state of CGM. Monitoring sensors are often replaced every week. Considering three days of monitoring for identification, and three or four days for validation, the full lifespan of a sensor is used and more coherent results are expected. Two different profiles were used for the identification days: advance of the meal with respect to the insulin delivery, and delay of the meal. The meal was smaller when advanced and larger when delayed, for patient's safety. The insulin delivery before meal profile was found to enrich the data more than the other profile, being this case repeated twice in the three days experiment.
+
+In the ambulatory environment, the experiments were slightly modified for easier application. The preprandial glucose level and trend were taken into consideration when deciding which of the profiles to apply. Two scenarios were considered:
+	
+	\begin{itemize}
+		\item If preprandial glucose was greater than $150 mg/dL$ or between $100-150$ and rising, the insulin bolus was delivered in advance, followed by a 100 CHO grams meal.
+		\item If preprandial glucose was lesser than $100 mg/dL$ or between $100-150$ and decreasing, the insulin bolus was delayed 2 hours to a meal of 40 CHO grams.
+	\end{itemize}
+
+This protocol was used for gathering CGM data from 12 diabetic patients in real-life conditions in an experiment in the Clinic University Hospital of Valencia \cite{paoloibolus2012}. Data obtained from those 12 patients in an in-clinic experiment is used later on in this thesis for identification purposes. The same data was used for the development of a simulation model for CGM devices.
+
+The results obtained from the experiment design were tested on two minimal models for sake of simplicity in the design process, and in order to yield results non-dependent on the model. There is no limitation to apply the experiments designed in here to more complex models, such as those used in the patient simulations suites introduced in Chapter\ref{sec:ModelsForDiabetes}. In the following chapters, identification experiments are performed using pre-made interval models based on the Cambridge model. Extensive studies of the properties of this interval version of the Cambridge model can be found in literature, easing the process of simulation. Also, the Cambridge model has been already used in successful closed-loop studies even under domiciliary conditions, which included patient individualization, proving its value for this task.
+
+Two CGM devices were analyzed and modeled in Chapter \ref{sec:CGMStatisticalModelingAndValidation}. The model proposed is stochastic in nature, and can be used for simulation purposes and for testing controllers. Three different characteristics were used for the construction of the model:
+
+\begin{itemize}
+	\item Delay of the CGM signal to blood glucose.
+	\item Stationarity of the error of the CGM.
+	\item Autocorrelation and probability distribution of the error.
+\end{itemize}
+
+Delay along the population was found to follow an exponential distribution. Contrary to the general opinion, the error signal of the CGM was found to be non-stationary, and as such much more difficult to model. Very simple correlations were found between the error signal and the blood glucose profile and its derivative. Quasi-stationarity was achieved when using those correlations to transform the error signal. Finally, simple AR models and probability distributions were used for characterization of the stationary signal.
+
+Identification trials on the diabetes context are historically found challenging. Virtual data identification, for example using virtual patient's data from any of the simulators described, is of great importance as an introduction to the real experiments. The CGM model developed in this part of the thesis helps in the completion of virtual identifications for the diabetes context. Compared to other models in literature, the proposed model tackles with the non-stationarity issue as compared to existing models. As for the delay and distribution characterization, the findings of this thesis are in accordance with the results of other publications.
+
+
+
+

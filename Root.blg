@@ -1,0 +1,27 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: Root.aux
+A level-1 auxiliary file: portada.aux
+A level-1 auxiliary file: ack.aux
+A level-1 auxiliary file: abstract1.aux
+A level-1 auxiliary file: abstract2.aux
+A level-1 auxiliary file: abstract3.aux
+A level-1 auxiliary file: Motivation.aux
+A level-1 auxiliary file: Identification.aux
+A level-1 auxiliary file: Models.aux
+A level-1 auxiliary file: Challenge_identification.aux
+A level-1 auxiliary file: conclusions_SOTA.aux
+A level-1 auxiliary file: Optimal_design_results.aux
+A level-1 auxiliary file: errormodel.aux
+A level-1 auxiliary file: conclusions_part2.aux
+A level-1 auxiliary file: insilico_interval_ident.aux
+A level-1 auxiliary file: interval_ident_ip.aux
+A level-1 auxiliary file: CGMident.aux
+A level-1 auxiliary file: conclusions_part3.aux
+A level-1 auxiliary file: future.aux
+The style file: plain.bst
+Database file #1: ../../../Desktop/Insulaid2/bib.bib
+Warning--entry type for "UVAsimpatente" isn't style-file defined
+--line 1893 of file ../../../Desktop/Insulaid2/bib.bib
+Warning--can't use both author and editor fields in cramer1946mathematical
+Warning--there's a number but no series in cramer1946mathematical
+Warning--can't use both volume and number fields in quenouille1949approximate
+(There were 4 warnings)

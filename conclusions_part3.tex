@@ -1,0 +1,32 @@
+\chapter*{Conclusions}
+\label{sec:Conclusions_part3}
+\addcontentsline{toc}{chapter}{Conclusions}
+
+Interval identification gets more challenging in each chapter of the third and final part of this thesis. Experimental data identification is especially difficult, and the progression of the validation results for the experimental set can be seen in Table \ref{tab:resultspart3}.
+
+\begin{table}[hbtp]
+	\centering
+	\begin{tabular}{ c | c | c | c } 
+	 & In-patient Study & YSI Ident & CGM Ident\\
+	\hline	
+	Width [mg/dL] & 78.8 & 82.4 & 95.9 \\
+	Prediction [\%] & 53.5 & 53.6 & 58.4 \\
+	MARD [\%] & 7.61 & 9.63 & 10.04 \\
+\end{tabular}
+\caption{Results for the identification experiments of increasing complexity and difficulty. All results are mean values of the prediction capabilities of the complete dataset evaluated in the validation days.}
+\label{tab:resultspart3}
+\end{table}
+
+\textit{In silico} identification proved that the model identification including variability was feasible. It also was concluded that the interval model chosen for simulation did not suffer of great identifiability problems. CGM was proven to be a great problem even when simulated. From the CGM identifications on virtual patient data, it was concluded that pure interval identification is not plausible for home monitoring periods. A compromise is achieved by estimating the patient's variability, and successful validation of the method is presented for the whole dataset.
+
+Multiobjective optimization was used in the first chapter of the identification experiments that led to the computationally more efficient method introduced in the experimental identifications. The computation weight of the genetic optimization algorithms used for the minimization of multiple objectives renders the method too heavy to be used on experimental data, where multiple permutations of the identification days must be evaluated, increasing the number of optimization experiments to be performed for each patient by a factor of 4.
+
+The setup used in the \textit{in silico} identification (Chapter \ref{sec:InSilicoIdentification}) was slightly different than the one used on the identifications used on experimental data. The \textit{in silico} tests were designed for focusing on the home monitoring stages of the experiment where the data was collected from. In this previous experiment \cite{paoloibolus2012}, 2 weeks of home monitoring for each patient were recorded using CGM. In these ambulatory periods the patients followed the optimal experiment design and the protocol proposed in Chapter \ref{sec:OptimalDesign}. However, no blood glucose reference data was available for validation of the identification trials, and if validation were to be performed, CGM data would have to be used. It has been proven in this thesis that even the most up to date monitors are subject to great monitoring errors, and it was concluded that patient identification had to be contrasted against real blood glucose data. Only the in-patient part of the study described  in \cite{paoloibolus2012} reported YSI data, and it was decided to use this data for validation instead.
+
+Many of the conclusions extracted from Chapter \ref{sec:InSilicoIdentification} were of utility in the later chapters. Pareto fronts indeed provide a very concrete and information-rich visualization of the prediction capabilities of the identification method used in real data. Pseudo-PF were used for evaluating the different scenarios of the experimental identifications, and also used for comparing the predictability of the model when increasing the model's complexity.
+
+Envelope fitness metric was introduced and used throughout this part of the thesis. It is considered an important finding, and especially one of the most useful tools here exposed. By measuring the envelope fitness, overestimation of the envelope width is discarded, since envelope fitness is contrary to the overfitting of interval model. Identifiability of the original model is assessed in previous chapters, but identifiability applied to the interval models is yet to be researched. Identifiability of the interval parameters was assumed to be extended from the original non-interval model. However, the possibility of intervals being too large for the description of experimental data was not explicitly described in the previous chapters of this thesis. Envelope fitness index was created as a first approximation to analyzing this potential problem. Low envelope fitness indexes found throughout all identifications in this part of the thesis denote a tight fitting of the envelope to the experimental data throughout all the postprandial periods used for identifying each patient, thus validating the fitting process and hinting good identifications of the interval parameters.
+
+The main finding from the results of the identifications here exposed is the fact that the model predictions work best for a determinate combination of monitoring days. This combination of days is also identified using larger envelopes than the average, and the prediction band include virtually all the samples of the validation days. The main point of this best case permutation however, is that the data fitted does not present worse envelope fitness measures than the average, discarding the possibility of trivial solutions (larger widths yield larger coverage of glucose). This best case scenario for each patient was defined as the case of maximum variability of each patient for all the monitoring days considered, and several patient cases are displayed in each chapter reinforcing this finding. The best case permutation however, appear at random, and no repeated patterns have been identified that can help with the prediction of this situations. The only solution to the maximization of variability relies in increasing the number of days in the identification of each patient for increasing de possibility of maximum variability of the patient's physiology.
+
+Finally, it is concluded that identification from experimental data is feasible including daily variability, even with the large excursions of the postprandial period of a diabetic patient. However, due to the relatively small number of subjects included in the studies, results may not be relevant to the whole diabetic population

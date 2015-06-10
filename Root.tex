@@ -1,0 +1,164 @@
+\documentclass[10pt]{book}
+
+\include{inicializa}
+\setlength{\marginparwidth}{0pt}
+
+\usepackage[pdftex=true, bookmarks=true, bookmarksopen=true, pdftitle={Model Identification from Ambulatory Data for Post-Prandial Glucose Control in type 1 Diabetes}, pdfsubject={Tesis}, pdfauthor={Alejandro José Laguna Sanz}]{hyperref}
+
+%\setmainfont{Hoefler Text}
+
+\begin{document}
+    \raggedbottom
+    \sloppy \lefthyphenmin=1000
+    % Con esto se consigue que latex no ponga guiones para separar palabras
+
+		\pagestyle{empty}
+    \include{portada}
+    %\cleardoublepage
+		\newpage
+		\mbox{}
+		\cleardoublepage	
+		
+
+		\singlespacing	
+		%\onehalfspacing
+		%\doublespacing
+		
+		\renewcommand{\thepage}{\Roman{page}}
+		\setcounter{page}{1}
+		\pagestyle{plain}
+		
+		\begin{funding}
+		\vspace{10ex}
+			This work has been supported by the Spanish Ministry of Science and Innovation under grant DPI-2010-20764-C02 and the European Union Seventh Framework Programme (FP7/2007-2013) under grant agreement FP7-PEOPLE-2009-IEF, Ref 252085.
+			\\
+			\vspace{2ex}
+			The author also received the FPI grant BES-2008-002203 from the Spanish Science and Innovation Ministry (MICINN). With relation to this grant, a short stay was done in ARTORG Center for Biomedical Engineering Research of the University Bern (2010), and another short stay in MICElab in the Universitat de Girona (2011). The author would like to acknowledge the collaboration of both groups.
+		\end{funding}
+		\newpage
+		\mbox{}
+		\cleardoublepage	
+			
+		\begin{dedication}
+					A los que se fueron.
+		\end{dedication}
+	  \newpage
+		\mbox{}
+		\cleardoublepage	
+		
+		\include{ack}
+		\newpage
+		\mbox{}
+		\cleardoublepage	
+				
+		
+    \include{abstract1}
+		\newpage
+		\mbox{}
+		\cleardoublepage		
+		
+
+    \include{abstract2}
+		\newpage
+		\mbox{}
+		\cleardoublepage
+
+
+    \include{abstract3}
+    \newpage
+		\mbox{}
+		\cleardoublepage
+		
+
+
+	
+
+	
+	  %%espaciado entre parrafos que se aplica a todo el documento
+		\parskip=4mm
+		%%posicion del numero de pagina a pie de documento
+		\footskip=70pt
+
+		\tableofcontents %ï¿½ndice general
+		
+		\cleardoublepage
+
+		\pagestyle{headings}
+		
+    \setcounter{page}{1}
+    \renewcommand{\thepage}{\arabic{page}}
+		
+
+
+    \include{Motivation} %renombrar a motivation y objetivos. Hablar de la diabetes en el mundo y la individualizacion de pacientes
+		
+		\part{State of the art}
+		\label{sec:stateOfTheArt}
+		
+		\include{Identification} 
+		\include{Models} 
+		\include{Challenge_identification} 
+
+		\include{conclusions_SOTA} %breve resumen con el enfoque intervalar como solucion para todos nuestros problemas
+
+		\part{Issues in Continuous Glucose Monitoring for Patient Identification}
+		\label{sec:Issues}
+
+		\include{Optimal_design_results}
+		\include{errormodel}
+		\include{conclusions_part2}
+		
+		
+		\part{Interval identification}
+		\label{sec:PartIntervalIdentification}
+		
+		\include{insilico_interval_ident}
+		\include{interval_ident_ip}
+		\include{CGMident}
+		\include{conclusions_part3}
+	
+		\include{future}
+		
+		%%Este bloque limpia una pagina si es necesario para que el capitulo empiece en pagina impar
+		%\cleardoublepage
+		%\newpage
+		%\mbox{}
+		%\cleardoublepage
+		
+		
+		%\part{Experiment design and monitoring}
+		%\label{sec:ExperimentDesignAndMonitoring}
+					
+		%\include{Optimal_design_results}
+		%\include{errormodel} %Articulo BPSC
+		
+		%\include{Ambulatory_data} % este bloque de identificaciones preliminares se puede quitar de la tesis. Hay que añadir algo en trabajo futuro
+						
+		%\part{Interval identification}
+		%\label{sec:IntervalIdentification}
+		
+		%\include{insilico_interval_ident} %Articulo BMS
+		%\include{experimental_interval_ident} %Articulo JPC e identificaciones CGM
+	
+	
+		%\include{Conclusions}
+
+    %\cleardoublepage
+    %\setlinespacing{1.2}
+    %\bibliographystyle{ifac} % Hay que activar el paquete Harvard.
+    %\bibliographystyle{amsalpha}
+		\bibliographystyle{plain}
+		\bibliography{../../../Desktop/Insulaid2/bib}
+
+    %\addcontentsline{toc}{chapter}{Bibliography}
+
+
+    \cleardoublepage
+    %\printindex
+    %\addcontentsline{toc}{chapter}{Índice alfabético}
+
+    \listoffigures % Índice de figuras
+    %\listoftables
+    %\newpage
+
+\end{document}

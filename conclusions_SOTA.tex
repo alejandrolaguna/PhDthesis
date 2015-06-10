@@ -1,0 +1,53 @@
+
+\chapter*{Conclusions}
+\label{sec:Conclusions}
+\addcontentsline{toc}{chapter}{Conclusions}
+
+Identification studies for type 1 diabetic patients are rarely found in literature. In this part of the thesis the most significant cases of patient individualization were reviewed, but unfortunately not one of them displays satisfactory prediction capabilities. In summary, individualization of type 1 diabetic models is still work in progress and special effort must be done in order to develop new strategies for predicting the glucose of a diabetic patient. A summary of the reviewed studies can be found in Table \ref{tab:iden_summary}.
+
+\begin{sidewaystable}[hbtp]
+	\centering
+		\begin{tabular}{c|c|c|c}
+		\emph{Reference} &	\emph{Model} & \emph{Achievements} & \emph{Drawbacks} \\
+		\hline 
+		\hline
+		St{\aa}hl \textit{et al.} & \multirow{2}{*}{Data based model} & Real life measurements & \multirow{2}{*}{Data from only one individual} \\
+		\cite{stahl2009diabetes} & & Up to 2 hour prediction & \\
+		\hline 
+		Cescon \textit{et al.} & \multirow{2}{*}{Data based model} & \multirow{2}{*}{Use of CGM} &Data from only one individual\\
+		\cite{cescon2009subspace} & & & 30 minutes prediction \\
+		\hline 
+		Rollins \textit{et al.} & \multirow{2}{*}{Data based model} & Use of multiple sensors & Data from only one individual \\
+		\cite{rollins2010free} & & Succesful fit $R=0.7$ & Absence of insulin disturbance \\
+		\hline 
+		Georga \textit{et al.}  & \multirow{2}{*}{Data based model} & \multirow{2}{*}{7 patients dataset} & \multirow{2}{*}{Poor predictions} \\
+		\cite{georga2011glucose} & & & \\
+		\hline 
+		Cameron \textit{et al.}  & \multirow{2}{*}{Data based model} & \multirow{2}{*}{Experimental validation of the identifications} & \multirow{2}{*}{Poor predictions} \\
+		\cite{cameron2012extended} & & & \\
+		\hline 
+		Palerm \textit{et al.} & \multirow{2}{*}{First principles} & Good data fitting & \multirow{2}{*}{Validation non satisfactory} \\
+		\cite{palerm2006robust} & & Physiology based models &  \\
+		\hline 
+		Finan \textit{et al.} & \multirow{2}{*}{Data based model} & \multirow{2}{*}{Comparison against ZOH} & \multirow{2}{*}{No improvement over ZOH} \\
+		\cite{finan2009experimental} & & & \\
+	  \hline 
+		Kirchsteiger \textit{et al.}  & \multirow{2}{*}{Data based model} & \multirow{2}{*}{Interval usage (uncertainty consideration)} & \multirow{2}{*}{No validation of the identifications presented} \\
+		\cite{kirchsteiger2011estimating} & & & \\
+	\end{tabular}
+	\caption{Summary of identification studies.}
+	\label{tab:iden_summary}
+\end{sidewaystable}
+
+Additionally, these studies have significant limitations as a few patients were included and validation of the identification was either not performed or poor. Only one study using physiology-based models presented validation data (Palerm \textit{et al.} 2006 \cite{palerm2006robust}), and even though validation data is presented, the results are not satisfactory. In that study, no consideration of uncertainty was performed. In this thesis a full cross-validation study on multiple patients is presented using first principles models. By adding uncertainty on the identification process, validation expected results will be improved in the whole population of patients examined.
+
+Poor prediction and identification results published in literature suggest that individualization studies may be much more challenging for the diabetes paradigm than other classic engineering problems. These facts did not dissuade the author to advance as much as possible towards the solution of the identification problem, and in fact, new identification strategies are explored in this thesis that we believe strongly encourage the scientific community to push the limits of patient individualization forward. %esto puede ser motivation más que otra cosa, pero creo que queda bien aqui.
+
+%The results of the master's thesis led to negative conclusions, so no publications were associated. Following this reasoning, and given that few identification studies in literature show validation data, and being patient individualization such an important matter, we can only assume that many groups have already tried to perform pilot identification studies with few success. We would like to encourage readers to scientifically acknowledge that non-successful studies, should be supported by a solid theoretical methodology, are as important for publication as successful experiments. I believe enormous efforts and resources are being spent in repeating experiments with negative results, not only in the diabetes context, and especially within the smaller research groups, because of negative results publication avoidance. %no se si lo escrito queda muy fuerte, pero me gustaría que un parrafo similar a este llegara a la tesis
+
+Model accuracy is an open issue when dealing with glucose predictions. No proposed model of those reviewed in this thesis has shown exceeding performance over the others, and each one of them has been designed following a different set of directions. Models based on physiology are the most extended models in control and identification in diabetes, but they all lack on solid validation results. Model based experiment design can be used for a better use of the models proposed.
+
+Almost no focus has been given to uncertainty consideration in the identification context in literature, despite the public knowledge of enormous variations in some of the physiology parameters, and large errors registered in continuous monitoring studies. Uncertainty treatment is key for better prediction of glucose concentration of diabetic patients, even using current models based in physiology. Interval models appear as the perfect choice for these type of problem, and will be used in this thesis to develop reliable identification methodologies. Of course, as modeling in diabetes advances, predictions can be more and more accurate, with less uncertainty from unmodelled dynamics to be considered by the intervals, but we consider this to be work to be done in parallel to the identification methodologies, which are the focus of this thesis.
+
+Interval analysis and error-bounded estimation is a well established methodology, but have never been used in the diabetes context. This is most likely a consequence of the fact that estimating error incidence in glucose monitoring is usually very difficult. Sets of parameters that result from bounding all the possible errors in the glucose concentration space when measured by CGM are surely too large to be used in prediction studies and controller design. An interval approach more focused on the modeling of intra-patient variability is presented in this thesis, where the focus of the interval model is not to simulate all feasible responses to a single set of data but to bound several similar experiments on the same patient. With this repetition of days on the experiment, patient variability is expected to be present and interval models are expected to capture it. Coping with error in the measurement is handled by acknowledging a compromise between data fitting and measurement error. This type of interval bounding also focuses on the development of robust controllers because it provides not only patient characterization but also relative uncertainty measures for every different patient, which is closely related to robust controller design parameters.
+

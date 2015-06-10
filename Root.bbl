@@ -1,0 +1,647 @@
+\begin{thebibliography}{100}
+
+\bibitem{auger2005restart}
+Anne Auger and Nikolaus Hansen.
+\newblock A restart cma evolution strategy with increasing population size.
+\newblock In {\em Evolutionary Computation, 2005. The 2005 IEEE Congress on},
+  volume~2, pages 1769--1776. IEEE, 2005.
+
+\bibitem{bailey2007reduction}
+T.S. Bailey, H.C. Zisser, and S.K. Garg.
+\newblock Reduction in hemoglobin a1c with real-time continuous glucose
+  monitoring: results from a 12-week observational study.
+\newblock {\em Diabetes Technol Ther}, 9(3):203--210, 2007.
+
+\bibitem{banting1922internal}
+F.G. Banting and C.H. Best.
+\newblock The internal secretion of the pancreas.
+\newblock {\em J Lab Clin Med}, 7:251--266, 1922.
+
+\bibitem{basu2003use}
+R.~Basu, B.~Di~Camillo, G.~Toffolo, A.~Basu, P.~Shah, A.~Vella, R.~Rizza, and
+  C.~Cobelli.
+\newblock Use of a novel triple-tracer approach to assess postprandial glucose
+  metabolism.
+\newblock {\em Am J Physiol-Endoc M}, 284(1):E55, 2003.
+
+\bibitem{bazaraa2006nonlinear}
+M.S. Bazaraa, H.D. Sherali, and CM~Shetty.
+\newblock {\em Nonlinear programming: theory and algorithms}.
+\newblock John Wiley and Sons, 2006.
+
+\bibitem{bergman1981physiologic}
+R.N. Bergman, L.S. Phillips, and C.~Cobelli.
+\newblock Physiologic evaluation of factors controlling glucose tolerance in
+  man: measurement of insulin sensitivity and beta-cell glucose sensitivity
+  from the response to intravenous glucose.
+\newblock {\em Journal of Clinical Investigation}, 68(6):1456, 1981.
+
+\bibitem{jorgeibolus}
+J.~Bondia, E.~Dassau, H.~Zisser, R.~Calm, J.~Veh\'i, L.~Jovanovi\v{c}, and F.J.
+  Doyle~III.
+\newblock Coordinated basal-bolus infusion for tighter postprandial glucose
+  control in insulin pump therapy.
+\newblock {\em J Diab Sci Technol}, 3(1):89--97, 2009.
+
+\bibitem{box1994time}
+G.E.P. Box and G.M. Jenkins.
+\newblock {\em Time series analysis: forecasting and control}.
+\newblock Prentice Hall PTR, 1994.
+
+\bibitem{breton2008analysis}
+M.~Breton and B.~Kovatchev.
+\newblock Analysis, modeling, and simulation of the accuracy of continuous
+  glucose sensors.
+\newblock {\em J Diab Sci Technol}, 2(5):853--862, 2008.
+
+\bibitem{buckingham2006}
+B.A. Buckingham, C.~Kollman, R.~Beck, A.~Kalajian, R.~Fiallo-Scharer,
+  M.~Tansey, L.A. Fox, D.M. Wilson, S.A. Weinzimer, K.J. Ruedy, and W.V.
+  Tamborlane.
+\newblock Evaluation of factors affecting cgms calibration.
+\newblock {\em Diabet Technol Ther}, 8:318--325, 2006.
+
+\bibitem{calm2010comparison}
+R.~Calm, M.~Garc\'ia-Jaramillo, J.~Bondia, M.A. Sainz, and J.~Veh\'i.
+\newblock Comparison of interval and monte carlo simulation for the prediction
+  of postprandial glucose under uncertainty in type 1 diabetes mellitus.
+\newblock {\em Comput Meth Prog Bio}, 104(3):325--332, 2010.
+
+\bibitem{calm2007prediction}
+R.~Calm, M.~Garcia-Jaramillo, J.~Veh\'i, J.~Bondia, C.~Tarin, and
+  W.~Garcia-Gabin.
+\newblock Prediction of glucose excursions under uncertain parameters and food
+  intake in intensive insulin therapy for type 1 diabetes mellitus.
+\newblock In {\em Engineering in Medicine and Biology Society, 2007. EMBS 2007.
+  29th Annual International Conference of the IEEE}, pages 1770--1773. IEEE,
+  2007.
+
+\bibitem{cameron2012extended}
+F.~Cameron, G.~Niemeyer, and B.W. Bequette.
+\newblock Extended multiple model prediction with application to blood glucose
+  regulation.
+\newblock {\em Journal of Process Control}, 22(8):1422--1432, 2012.
+
+\bibitem{cescon2009subspace}
+M.~Cescon, F.~St{\aa}hl, M.~Landin-Olsson, and R.~Johansson.
+\newblock Subspace-based model identification of diabetic blood glucose
+  dynamics.
+\newblock {\em Insulin}, 2(4):6, 2009.
+
+\bibitem{clarke2009closed}
+W.L. Clarke, S.~Anderson, M.~Breton, S.~Patek, L.~Kashmer, B.~Kovatchev, et~al.
+\newblock Closed-loop artificial pancreas using subcutaneous glucose sensing
+  and insulin delivery and a model predictive control algorithm: the virginia
+  experience.
+\newblock {\em J Diab Sci Technol}, 3(5):1031--1038, 2009.
+
+\bibitem{clarke1987evaluating}
+W.L. Clarke, D.~Cox, L.A. Gonder-Frederick, W.~Carter, and S.L. Pohl.
+\newblock Evaluating clinical accuracy of systems for self-monitoring of blood
+  glucose.
+\newblock {\em Diabetes Care}, 10(5):622--628, 1987.
+
+\bibitem{cobelli1987minimal}
+C.~Cobelli and K.~Thomaseth.
+\newblock The minimal model of glucose disappearance: optimal input studies.
+\newblock {\em Math Biosci}, 83(2):127--155, 1987.
+
+\bibitem{coleman1993interior}
+T.F. Coleman and Y.~Li.
+\newblock An interior trust region approach for nonlinear minimization subject
+  to bounds.
+\newblock {\em SIAM Journal on Optimization}, 6:418--445, 1996.
+
+\bibitem{colmegna2014analysis}
+P.~Colmegna and R.S. S{\'a}nchez~Pe{\~n}a.
+\newblock Analysis of three t1dm simulation models for evaluating robust
+  closed-loop controllers.
+\newblock {\em Computer methods and programs in biomedicine}, 113(1):371--382,
+  2014.
+
+\bibitem{cramer1946mathematical}
+H.~Cramer.
+\newblock {\em Mathematical models of statistics}.
+\newblock Number~9. Princeton University Press, 1946.
+
+\bibitem{man2006system}
+C.~Dalla~Man, M.~Camilleri, and C.~Cobelli.
+\newblock A system model of oral glucose absorption: validation on gold
+  standard data.
+\newblock {\em IEEE T Bio-Med Eng}, 53(12 Part 1):2472--2478, 2006.
+
+\bibitem{man2007meal}
+C.~Dalla~Man, R.A. Rizza, and C.~Cobelli.
+\newblock Meal simulation model of the glucose-insulin system.
+\newblock {\em IEEE T Bio-Med Eng}, 54(10):1740--1749, 2007.
+
+\bibitem{dalla2014uva}
+Chiara Dalla~Man, Francesco Micheletto, Dayu Lv, Marc Breton, Boris Kovatchev,
+  and Claudio Cobelli.
+\newblock The uva/padova type 1 diabetes simulator new features.
+\newblock {\em Journal of Diabetes Science and Technology}, 8(1):26--34, 2014.
+
+\bibitem{de2012prediction}
+D.~de~Pereda, S.~Romero-Vivo, B.~Ricarte, and J.~Bondia.
+\newblock On the prediction of glucose concentration under intra-patient
+  variability in type 1 diabetes: a monotone systems approach.
+\newblock {\em Comput Meth Prog Bio}, 108 (3):993--1001, 2012.
+
+\bibitem{del2012glucose}
+S.~Del~Favero, A.~Facchinetti, and C.~Cobelli.
+\newblock A glucose-specific metric to assess predictors and identify models.
+\newblock {\em Biomedical Engineering, IEEE Transactions on},
+  59(99):1281--1290, 2012.
+
+\bibitem{efron1982jackknife}
+B.~Efron and B.~Efron.
+\newblock {\em The jackknife, the bootstrap and other resampling plans},
+  volume~38.
+\newblock SIAM, 1982.
+
+\bibitem{egea2007scatter}
+J.A. Egea, M.~Rodr{\'\i}guez-Fern{\'a}ndez, J.R. Banga, and R.~Mart{\'\i}.
+\newblock Scatter search for chemical and bio-process optimization.
+\newblock {\em Journal of Global Optimization}, 37(3):481--503, 2007.
+
+\bibitem{fabietti2006control}
+P.G. Fabietti, V.~Canonico, M.O. Federici, M.M. Benedetti, and E.~Sarti.
+\newblock Control oriented model of insulin and glucose dynamics in type 1
+  diabetics.
+\newblock {\em Medical and Biological Engineering and Computing}, 44(1):69--78,
+  2006.
+
+\bibitem{facchinetti2013modeling}
+A~Facchinetti, S~Del~Favero, G~Sparacino, JR~Castle, WK~Ward, and C~Cobelli.
+\newblock Modeling the glucose sensor error.
+\newblock {\em IEEE T Bio-Med Eng}, 61(3):620--629, 2013.
+
+\bibitem{facchinetti2007reconstruction}
+A.~Facchinetti, G.~Sparacino, and C.~Cobelli.
+\newblock Reconstruction of glucose in plasma from interstitial fluid
+  continuous glucose monitoring data: role of sensor calibration.
+\newblock {\em J Diab Sci Technol}, 1(5):617--623, 2007.
+
+\bibitem{facchinetti2010modeling}
+A.~Facchinetti, G.~Sparacino, and C.~Cobelli.
+\newblock Modeling the error of continuous glucose monitoring sensor data:
+  critical aspects discussed through simulation studies.
+\newblock {\em J Diab Sci Technol}, 4(1):4--14, 2010.
+
+\bibitem{finan2009experimental}
+D.A. Finan, F.J. Doyle~III, C.C. Palerm, W.C. Bevier, H.C. Zisser,
+  L.~Jovanovi\v{c}, and D.E. Seborg.
+\newblock Experimental evaluation of a recursive model identification technique
+  for type 1 diabetes.
+\newblock {\em J Diab Sci Technol}, 3(5):1192--1202, 2009.
+
+\bibitem{franceschini2008model}
+G.~Franceschini and S.~Macchietto.
+\newblock Model-based design of experiments for parameter precision: State of
+  the art.
+\newblock {\em Chemical Engineering Science}, 63(19):4846--4872, 2008.
+
+\bibitem{galvanin2009}
+F.~Galvanin, M.~Barolo, S.~Macchietto, and F.~Bezzo.
+\newblock Optimal design of clinical tests for the identification of
+  physiological models of type 1 diabetes mellitus.
+\newblock {\em Industrial \& Engineering Chemistry Research}, 48:1989--2002,
+  2009.
+
+\bibitem{galvanin2011optimal}
+F.~Galvanin, M.~Barolo, S.~Macchietto, and F.~Bezzo.
+\newblock Optimal design of clinical tests for the identification of
+  physiological models of type 1 diabetes in the presence of model mismatch.
+\newblock {\em Medical \& Biological Engineering \& Computing}, 49(3):263--277,
+  2011.
+
+\bibitem{mairathesis}
+M.~García~Jaramillo.
+\newblock {\em Prediction of postprandial blood glucose under intra-patient
+  variability and uncertainty and its use in the design of insulin dosing
+  strategies for type 1 diabetic patients}.
+\newblock PhD thesis, Universitat de Girona, 2011.
+
+\bibitem{garg2007continuous}
+S.K. Garg, W.C. Kelly, M.K. Voelmle, P.J. Ritchie, P.A. Gottlieb, K.K. McFann,
+  and S.L. Ellis.
+\newblock Continuous home monitoring of glucose.
+\newblock {\em Diabet Care}, 30(12):3023, 2007.
+
+\bibitem{georga2011glucose}
+E.I Georga, V.C. Protopappas, and D.I. Fotiadis.
+\newblock Glucose prediction in type 1 and type 2 diabetic patients using data
+  driven techniques.
+\newblock {\em Knowledge-Oriented Applications in Data Mining}, 2011.
+
+\bibitem{haidar2013stochastic}
+Ahmad Haidar, M~Wilinska, James Graveston, and Roman Hovorka.
+\newblock Stochastic virtual population of subjects with type 1 diabetes for
+  the assessment of closed loop glucose controllers.
+\newblock {\em IEEE T Bio-Med Eng}, 60(12):3524--3533, 2013.
+
+\bibitem{hansen2006cma}
+N.~Hansen.
+\newblock The cma evolution strategy: a comparing review.
+\newblock {\em Towards a new evolutionary computation}, 192:75--102, 2006.
+
+\bibitem{hansen2004evaluating}
+N.~Hansen and S.~Kern.
+\newblock Evaluating the cma evolution strategy on multimodal test functions.
+\newblock In {\em Parallel Problem Solving from Nature-PPSN VIII}, pages
+  282--291. Springer, 2004.
+
+\bibitem{helms2009insulin}
+K.L. Helms and K.W. Kelley.
+\newblock Insulin glulisine: An evaluation of its pharmacodynamic properties
+  and clinical application.
+\newblock {\em The Annals of Pharmacotherapy}, 43(4):658, 2009.
+
+\bibitem{herrero2007well}
+J.~Herrero, M.~Mart\'inez, J.~Sanchis, and X.~Blasco.
+\newblock Well-distributed pareto front by using the $\epsilon$-moga
+  evolutionary algorithm.
+\newblock {\em Computational and Ambient Intelligence}, 4507:292--299, 2007.
+
+\bibitem{juanmatesis}
+J.M. Herrero.
+\newblock {\em Identificaci\'{o}n robusta de sistemas no lineales mediante
+  algoritmos evolutivos}.
+\newblock PhD thesis, Universidad Polit\'{e}cnica de Valencia, 2006.
+
+\bibitem{herrero2012simple}
+P.~Herrero, J.~Bondia, C.C. Palerm, J.~Veh{\'\i}, P.~Georgiou, N.~Oliver, and
+  C.~Toumazou.
+\newblock A simple robust method for estimating the glucose rate of appearance
+  from mixed meals.
+\newblock {\em Journal of diabetes science and technology}, 6(1):153, 2012.
+
+\bibitem{bibliotecapau}
+P.~Herrero, C.C. Palerm, E.~Dassau, H.~Zisser, L.~Jovanovi\v{c}, C.~Dalla~Man,
+  C.~Cobelli, J.~Veh\'i, and F.J. Doyle~III.
+\newblock A glucose absorption model library of mixed meals for in silico
+  evaluation of artificial $\beta$ cell control algorithms.
+\newblock In {\em Diabetes Technology Meeting, San Francisco}, 2007.
+
+\bibitem{hirsch2008clinical}
+I.B. Hirsch, D.~Armstrong, R.M. Bergenstal, B.~Buckingham, B.P. Childs, W.L.
+  Clarke, A.~Peters, and H.~Wolpert.
+\newblock Clinical application of emerging sensor technologies in diabetes
+  management: consensus guidelines for continuous glucose monitoring (cgm).
+\newblock {\em Diabet Technol Ther}, 10(4):232--246, 2008.
+
+\bibitem{hovorka2010manual}
+R.~Hovorka, J.M. Allen, D.~Elleri, L.J. Chassin, J.~Harris, D.~Xing,
+  C.~Kollman, T.~Hovorka, A.M.F. Larsen, M.~Nodale, et~al.
+\newblock Manual closed-loop insulin delivery in children and adolescents with
+  type 1 diabetes: a phase 2 randomised crossover trial.
+\newblock {\em Lancet}, 375(9716):743--751, 2010.
+
+\bibitem{hovorka2004nonlinear}
+R.~Hovorka, V.~Canonico, L.J. Chassin, U.~Haueter, M.~Massi-Benedetti,
+  M.~Orsini~Federici, T.R. Pieber, H.C. Schaller, L.~Schaupp, T.~Vering, et~al.
+\newblock Nonlinear model predictive control of glucose concentration in
+  subjects with type 1 diabetes.
+\newblock {\em Physiological Measurement}, 25:905--920, 2004.
+
+\bibitem{hovorka2007blood}
+R.~Hovorka, J.~Kremen, J.~Blaha, M.~Matias, K.~Anderlova, L.~Bosanska,
+  T.~Roubicek, M.E. Wilinska, L.J. Chassin, S.~Svacina, et~al.
+\newblock Blood glucose control by a model predictive control algorithm with
+  variable sampling rate versus a routine glucose management protocol in
+  cardiac surgery patients: a randomized controlled trial.
+\newblock {\em Journal of Clinical Endocrinology \& Metabolism}, 92(8):2960,
+  2007.
+
+\bibitem{hovorka2011overnight}
+R.~Hovorka, K.~Kumareswaran, J.~Harris, J.M. Allen, D.~Elleri, D.~Xing,
+  C.~Kollman, M.~Nodale, H.R. Murphy, D.B. Dunger, et~al.
+\newblock Overnight closed loop insulin delivery (artificial pancreas) in
+  adults with type 1 diabetes: crossover randomised controlled studies.
+\newblock {\em BMJ: British Medical Journal}, 342, 2011.
+
+\bibitem{hovorka2013assessing}
+R.~Hovorka, M.~Nodale, A.~Haidar, and M.E. Wilinska.
+\newblock Assessing performance of closed-loop insulin delivery systems by
+  continuous glucose monitoring: drawbacks and way forward.
+\newblock {\em Diabetes technology \& therapeutics}, 15(1):4--12, 2013.
+
+\bibitem{hovorka2002partitioning}
+R.~Hovorka, F.~Shojaee-Moradie, P.V. Carroll, L.J. Chassin, I.J. Gowrie, N.C.
+  Jackson, R.S. Tudor, A.M. Umpleby, and R.H. Jones.
+\newblock Partitioning glucose distribution/transport, disposal, and endogenous
+  production during ivgtt.
+\newblock {\em Am J Physiol-Endoc M}, 282(5):E992, 2002.
+
+\bibitem{hunt1975volume}
+J.N. Hunt and D.F. Stubbs.
+\newblock The volume and energy content of meals as determinants of gastric
+  emptying.
+\newblock {\em The Journal of Physiology}, 245(1):209, 1975.
+
+\bibitem{IDFatlas}
+IDF.
+\newblock Diabetes atlas, 2013.
+
+\bibitem{jaulin2001applied}
+L.~Jaulin, M.~Kieffer, O.~Didrit, and E.~Walter.
+\newblock {\em Applied interval analysis: with examples in parameter and state
+  estimation, robust control and robotics}, volume~1.
+\newblock Springer Verlag, 2001.
+
+\bibitem{kamath2009analysis}
+A.~Kamath, A.~Mahalingam, and J.~Brauker.
+\newblock Analysis of time lags and other sources of error of the dexcom seven
+  continuous glucose monitor.
+\newblock {\em Diabet Technol Ther}, 11(11):689--695, 2009.
+
+\bibitem{keenan2010accuracy}
+D.B. Keenan, R.~Cartaya, and J.J. Mastrototaro.
+\newblock Accuracy of a new real-time continuous glucose monitoring algorithm.
+\newblock {\em J Diabetes Sci Technol}, 4(1):111, 2010.
+
+\bibitem{kirchsteiger2011estimating}
+H.~Kirchsteiger, G.C. Estrada, S.~Pölzer, E.~Renard, and L.~del Re.
+\newblock Estimating interval process models for type 1 diabetes for robust
+  control design.
+\newblock In {\em Proceedings of the 18th IFAC World Congress}, volume~18,
+  pages 11761--11766, 2011.
+
+\bibitem{klingensmith2010gastric}
+W.C. Klingensmith, K.L. Rhea, E.A. Wainwright, and O.W. Hopper.
+\newblock The gastric emptying study with oatmeal: reference range and
+  reproducibility as a function of age and sex.
+\newblock {\em Journal of Nuclear Medicine Technology}, 38(4):186--190, 2010.
+
+\bibitem{kobayashi1983pharmacokinetics}
+T.~Kobayashi, S.~Sawano, T.~Itoh, K.~Kosaka, H.~Hirayama, and Y.~Kasuya.
+\newblock The pharmacokinetics of insulin after continuous subcutaneous
+  infusion or bolus subcutaneous injection in diabetic patients.
+\newblock {\em Diabetes}, 32(4):331, 1983.
+
+\bibitem{kovatchev2010multinational}
+B.~Kovatchev, C.~Cobelli, E.~Renard, S.~Anderson, M.~Breton, S.~Patek,
+  W.~Clarke, D.~Bruttomesso, A.~Maran, C.~Silvana, et~al.
+\newblock Multinational study of subcutaneous model-predictive closed-loop
+  control in type 1 diabetes mellitus: summary of the results.
+\newblock {\em Journal of diabetes science and technology}, 4(6):1374, 2010.
+
+\bibitem{kovatchev2009biosimulation}
+B.P. Kovatchev, M.~Breton, C.~Dalla~Man, and C.~Cobelli.
+\newblock In silico preclinical trials: A proof of concept in closed-loop
+  control of type 1 diabetes.
+\newblock {\em J Diab Sci Technol}, 3(1):44--55, 2009.
+
+\bibitem{kovatchev2004evaluating}
+B.P. Kovatchev, L.A. Gonder-Frederick, D.J. Cox, and W.L. Clarke.
+\newblock Evaluating the accuracy of continuous glucose-monitoring sensors
+  continuous glucose--error grid analysis illustrated by therasense freestyle
+  navigator data.
+\newblock {\em Diabet Care}, 27(8):1922--1928, 2004.
+
+\bibitem{kraegen1984insulin}
+E.W. Kraegen and D.J. Chisholm.
+\newblock Insulin responses to varying profiles of subcutaneous insulin
+  infusion: kinetic modelling studies.
+\newblock {\em Diabetologia}, 26(3):208--213, 1984.
+
+\bibitem{DTMlaguna2010}
+A.J. Laguna, P.~Rossetti, F.J. Ampudia-Blasco, J.~Veh\'i, and J.~Bondia.
+\newblock Improving postprandial model identification using ambulatory data
+  from type 1 diabetic patients.
+\newblock In {\em 10th annual Diabetes Technology Meeting}, 2010.
+
+\bibitem{lehmann1992physiological}
+E.D. Lehmann and T.~Deutsch.
+\newblock A physiological model of glucose-insulin interaction in type 1
+  diabetes mellitus.
+\newblock {\em Journal of Biomedical Engineering}, 14(3):235--242, 1992.
+
+\bibitem{ljung1999system}
+L.~Ljung.
+\newblock {\em System Identification: Theory for the User}.
+\newblock Prentice-Hall, Upper Saddle River, NJ,, 1999.
+
+\bibitem{magni2007model}
+L.~Magni, D.M. Raimondo, L.~Bossi, C.~Dalla~Man, G.~De~Nicolao, B.~Kovatchev,
+  and C.~Cobelli.
+\newblock Model predictive control of type 1 diabetes: an in silico trial.
+\newblock {\em J Diab Sci Technol}, 1(6):804--812, 2007.
+
+\bibitem{mazze2009evaluating}
+R.S. Mazze, E.~Strock, S.~Borgman, D.~Wesley, P.~Stout, and J.~Racchini.
+\newblock Evaluating the accuracy, reliability, and clinical applicability of
+  continuous glucose monitoring (cgm): Is cgm ready for real time?
+\newblock {\em Diabet Technol Ther}, 11(1):11--18, 2009.
+
+\bibitem{mitchell1989gastric}
+J.B. Mitchell, D.L. Costill, J.A. Houmard, W.J. Fink, R.A. Robergs, and J.A.
+  Davis.
+\newblock Gastric emptying: influence of prolonged exercise and carbohydrate
+  concentration.
+\newblock {\em Medicine \& Science in Sports \& Exercise}, 21(3):269, 1989.
+
+\bibitem{moore1979methods}
+R.E. Moore.
+\newblock {\em Methods and applications of interval analysis}, volume~2.
+\newblock SIAM, 1979.
+
+\bibitem{Mosekilde1989modeling}
+E.~Mosekilde, K.S. Jensen, C.~Binder, S.~Pramming, and B.~Thorsteinsson.
+\newblock Modeling absorption kinetics of subcutaneous injected soluble
+  insulin.
+\newblock {\em Journal of Pharmacokinetics and Pharmacodynamics}, 17(1):67--87,
+  1989.
+
+\bibitem{nowotny2012precision}
+B.~Nowotny, PJ~Nowotny, K.~Strassburger, and M.~Roden.
+\newblock Precision and accuracy of blood glucose measurements using three
+  different instruments.
+\newblock {\em Diabetic Medicine}, 29(2):260--265, 2012.
+
+\bibitem{nucci2000models}
+G.~Nucci and C.~Cobelli.
+\newblock Models of subcutaneous insulin kinetics. a critical review.
+\newblock {\em Comput Meth Prog Bio}, 62(3):249--257, 2000.
+
+\bibitem{palerm2006robust}
+C.~Palerm, M.~Rodríguez-Fernández, WC. Bevier, H~Zisser, JR. Banga,
+  L~Jovanovi\v{c}, and FJ. Doyle~3r.
+\newblock Robust parameter estimation in a model for glucose kinetics in type 1
+  diabetes subjects.
+\newblock In {\em Proceedings of the 28th IEEE EMBS Annual International
+  Conference New York City, USA, Aug 30-Sept 3, 2006}, 2006.
+
+\bibitem{panunzi2007discrete}
+S.~Panunzi, P.~Palumbo, and A.~De~Gaetano.
+\newblock A discrete single delay model for the intra-venous glucose tolerance
+  test.
+\newblock {\em Theoretical Biology and Medical Modelling}, 4(1):35, 2007.
+
+\bibitem{UVAsimpatente}
+International Patent.
+\newblock Wo 2008/157781 a1, 2008.
+
+\bibitem{percival2010modeling}
+M.W. Percival, W.C. Bevier, Y.~Wang, E.~Dassau, H.C. Zisser,
+  L.~Jovanovi{\v{c}}, and FJ~Doyle~3rd.
+\newblock Modeling the effects of subcutaneous insulin administration and
+  carbohydrate consumption on blood glucose.
+\newblock {\em J Diab Sci Technol}, 4(5):1214--1228, 2010.
+
+\bibitem{percival}
+M.W. Percival, E.~Dassau, H.~Zisser, L.~Jovanovic, and F.J. Doyle~III.
+\newblock Practical approach to design and implementation of a control
+  algorithm in an artificial pancreatic beta cell.
+\newblock {\em Industrial and Engineering Chemistry Research}, 48:6059--6067,
+  2009.
+
+\bibitem{Powell1978NLSQP}
+M.~Powell.
+\newblock A fast algorithm for nonlinearly constrained optimization
+  calculations.
+\newblock In {\em Numerical analysis: proceedings of the Biennial Conference
+  held at Dundee, June 28-July 1, 1977}, page 144, 1978.
+
+\bibitem{puckett1995model}
+W.R. Puckett and E.N. Lightfoot.
+\newblock A model for multiple subcutaneous insulin injections developed from
+  individual diabetic patient data.
+\newblock {\em Am J Physiol-Endoc M}, 269(6):E1115, 1995.
+
+\bibitem{quenouille1949approximate}
+M.H. Quenouille.
+\newblock Approximate tests of correlation in time-series 3.
+\newblock In {\em Mathematical Proceedings of the Cambridge Philosophical
+  Society}, volume~45, pages 483--484. Cambridge Univ Press, 1949.
+
+\bibitem{quon1994non}
+M.J. Quon, C.~Cochran, S.I. Taylor, and R.C. Eastman.
+\newblock Non-insulin-mediated glucose disappearance in subjects with iddm.
+  discordance between experimental results and minimal model analysis.
+\newblock {\em Diabetes}, 43(7):890, 1994.
+
+\bibitem{rao2009linear}
+C.R. Rao.
+\newblock {\em Linear statistical inference and its applications}, volume~22.
+\newblock Wiley. com, 2009.
+
+\bibitem{rebrin1999subcutaneous}
+K.~Rebrin, G.M. Steil, W.P. Van~Antwerp, and J.J. Mastrototaro.
+\newblock Subcutaneous glucose predicts plasma glucose independent of insulin:
+  implications for continuous monitoring.
+\newblock {\em Am J Physiol-Endoc M}, 277(3):E561, 1999.
+
+\bibitem{regittnig1999plasma}
+W.~Regittnig, Z.~Trajanoski, HJ~Leis, M.~Ellmerer, A.~Wutte, G.~Sendlhofer,
+  L.~Schaupp, GA~Brunner, P.~Wach, and TR~Pieber.
+\newblock Plasma and interstitial glucose dynamics after intravenous glucose
+  injection: evaluation of the single-compartment glucose distribution
+  assumption in the minimal models.
+\newblock {\em Diabetes}, 48(5):1070, 1999.
+
+\bibitem{rodriguez2006novel}
+M.~Rodriguez-Fernandez, J.A. Egea, and J.R. Banga.
+\newblock Novel metaheuristic for parameter estimation in nonlinear dynamic
+  biological systems.
+\newblock {\em BMC bioinformatics}, 7(1):483, 2006.
+
+\bibitem{rodriguez2006hybrid}
+M.~Rodriguez-Fernandez, P.~Mendes, and J.R. Banga.
+\newblock A hybrid approach for efficient and robust parameter estimation in
+  biochemical pathways.
+\newblock {\em Biosystems}, 83(2):248--265, 2006.
+
+\bibitem{rollins2010free}
+D.K. Rollins, N.~Bhandari, J.~Kleinedler, K.~Kotz, A.~Strohbehn, L.~Boland,
+  M.~Murphy, D.~Andre, N.~Vyas, G.~Welk, et~al.
+\newblock Free-living inferential modeling of blood glucose level using only
+  noninvasive inputs.
+\newblock {\em Journal of Process Control}, 20(1):95--107, 2010.
+
+\bibitem{paoloibolus2012}
+P.~Rossetti, F.J. Ampudia-Blasco, A.J. Laguna, A.~Revert, J.~Veh\'i, J.F.
+  Ascaso, and J.~Bondia.
+\newblock Evaluation of a novel continuous glucose monitoring-based method for
+  mealtime insulin dosing -the ibolus- in subjects with type 1 diabetes using
+  continuous subcutaneous insulin infusion therapy: A randomized controlled
+  trial.
+\newblock {\em Diabetes Technol Ther}, 14 (11):10.1089/dia.2012.0145, 2012.
+
+\bibitem{roy2007dynamic}
+A.~Roy and R.S. Parker.
+\newblock Dynamic modeling of exercise effects on plasma glucose and insulin
+  levels.
+\newblock {\em J Diab Sci Technol}, 1(3):338--347, 2007.
+
+\bibitem{scheiner2005characteristics}
+G.~Scheiner and B.A. Boyer.
+\newblock Characteristics of basal insulin requirements by age and gender in
+  type-1 diabetes patients using insulin pump therapy.
+\newblock {\em Diabetes Research and Clinical Practice}, 69(1):14--21, 2005.
+
+\bibitem{stahl2009diabetes}
+F.~St{\aa}hl and R.~Johansson.
+\newblock Diabetes mellitus modeling and short-term prediction based on blood
+  glucose measurements.
+\newblock {\em Math Biosci}, 217(2):101--117, 2009.
+
+\bibitem{tarin2005comprehensive}
+C.~Tarin, E.~Teufel, J.~Pico, J.~Bondia, and H.J. Pfleiderer.
+\newblock Comprehensive pharmacokinetic model of insulin glargine and other
+  insulin formulations.
+\newblock {\em IEEE T Bio-Med Eng}, 52(12):1994--2005, 2005.
+
+\bibitem{torlone1994}
+E.~Torlone, C.~Fanelli, AM~Rambotti, G.~Kassi, F.~Modarelli, A.~Vincenzo,
+  L.~Epifano, M.~Ciofetta, S.~Pampanelli, P.~Brunetti, et~al.
+\newblock Pharmacokinetics, pharmacodynamics and glucose counterregulation
+  following subcutaneous injection of the monomeric insulin analogue [lys
+  (b28), pro (b29)] in t1dm.
+\newblock {\em Diabetologia}, 37(7):713--720, 1994.
+
+\bibitem{versyck1998optimal}
+K.J. Versyck, J.E. Claes, and J.F. Van~Impe.
+\newblock Optimal experimental design for practical identification of
+  unstructured growth models.
+\newblock {\em Mathematics and computers in simulation}, 46(5-6):621--629,
+  1998.
+
+\bibitem{walter1997}
+E.~Walter and L.~Pronzato.
+\newblock {\em Identification of parametric models}.
+\newblock Springer Heidelberg, 1997.
+
+\bibitem{simuladorhovorka}
+M.E. Wilinska, L.J. Chassin, C.L. Acerini, J.M. Allen, D.B. Dunger, and
+  R.~Hovorka.
+\newblock Simulation environment to evaluate closed-loop insulin delivery
+  systems in type 1 diabetes.
+\newblock {\em J Diab Sci Technol}, 4(1):132--144, 2010.
+
+\bibitem{wilinska2005insulin}
+M.E. Wilinska, L.J. Chassin, H.C. Schaller, L.~Schaupp, T.R. Pieber, and
+  R.~Hovorka.
+\newblock Insulin kinetics in type-1 diabetes: continuous and bolus delivery of
+  rapid acting insulin.
+\newblock {\em IEEE T Bio-Med Eng}, 52(1):3--12, 2005.
+
+\bibitem{wilinska2009simulation}
+M.E. Wilinska and R.~Hovorka.
+\newblock Simulation models for \textit{in silico} testing of closed-loop
+  glucose controllers in type 1 diabetes.
+\newblock {\em Drug Discovery Today: Disease Models}, 5(4):289--298, 2009.
+
+\bibitem{wolpert2008}
+H.A. Wolpert.
+\newblock The nuts and bolts of achieving end points with real-time continuous
+  glucose monitoring.
+\newblock {\em Diabet Care}, 31:146--149, 2008.
+
+\bibitem{zisser2009accuracy}
+H.C. Zisser, T.S. Bailey, S.~Schwartz, R.E. Ratner, and J.~Wise.
+\newblock Accuracy of the seven{\textregistered} continuous glucose monitoring
+  system: Comparison with frequently sampled venous glucose measurements.
+\newblock {\em J Diab Sci Technol}, 3(5):1146--1154, 2009.
+
+\end{thebibliography}

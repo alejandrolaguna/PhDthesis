@@ -1,0 +1,288 @@
+
+\chapter{Experimental identification}
+\label{sec:ExperimentalIdentification}
+
+The term diabetes mellitus describes several diseases of abnormal carbohydrate metabolism that are characterized by hyperglycemia. It is associated with a relative or absolute impairment in insulin secretion, along with varying degrees of peripheral resistance to the action of insulin. Type 1 diabetes mellitus (T1DM), one of the most common chronic diseases in childhood, is caused by absolute insulin deficiency following destruction of the insulin-producing pancreatic beta cells. It most commonly presents in childhood, but one-fourth of cases are diagnosed in adults. Hyperglycemia, if not treated, can result either in acute (ketoacidosis) or chronic complications (microangiopathy leading to blindness and renal failure). The standard treatment consists in insulin replacement by means of insulin pens (Multiple Daily Injections - MDI) or insulin pumps (Continuous Subcutaneous Insulin Infusion - CSII), based on self-monitoring of capillary blood glucose concentration (SMBG). However, insulin dosing is an empirical process and frequently results in under- or over-insulinization, causing respectively hyper- and hypoglycemia. Hypoglycemia may have severe short-term complications such as confusion, falls, seizures, coma or even death. 
+
+Recent advances in continuous glucose monitoring (CGM) devices allow for the estimation of plasma glucose concentration every 1-5 minutes, providing much more information than the traditional sparse capillary measurements of SMBG. Although CGM devices are only approved as adjunctive to SMBG due to their suboptimal accuracy, especially in hypoglycemia [1], they have fostered research on closed loop glucose control (the so-called artificial pancreas, AP) [2]. Several prototypes of an AP have been proven successful in the nocturnal period [3,4], but an efficient control for the postprandial period remains a challenge, due to the big disturbance introduced by the meal and limitations inherent to the administration of insulin into the subcutaneous tissue [5].
+
+Effectiveness of an AP implementing model-based controllers depends on the accuracy of the individual model obtained for each patient. However, model individualization has been proven difficult for data-based models [6,7,8] or physiology-based models [9]. Several strategies have been proposed for improving the quality of the data acquired for model identification using optimal experiment design [10,11], but very few of these experiments have actually come to execution due to its complexity. Furthermore, suitability of classical metrics such as Mean Square Error for model evaluation has recently been questioned in the context of diabetes [12] where clinical implications of prediction errors must be considered.
+
+There are two main barriers to individual patient's model identification: error/noise sources in the measurement devices (especially with the use of CGM devices for ambulatory data acquisition), and uncertainty/variability in the patient's behavior because of circadian rhythms and other non-modeled dynamics, such as alterations in the endocrine system, changes in daily life, stress, illness, etc. Despite the high variability observed in the clinical practice [13], parametric uncertainty has not generally been included into the identification process, leading to average models with poor predictive capabilities. Exceptionally, in [14] the identification of input-output models with uncertain parameters is considered. An interval model is built based on standard optimization techniques penalizing the variance of the identified values for a collection of model instances. However, this ad-hoc solution lacks the inclusion properties and mathematical guarantee expected for an interval model, which is granted by the well-established area of interval analysis [15,16] and error-bounded identification [17]. In [18] a guaranteed method is presented, and evaluated with in silico data.
+
+Indeed, interval models are a natural way to express intra-patient variability and have been used in the past for model-based insulin therapy design [19,20], risk analysis [21] and fault-detection [22]. However, the identification of such interval models from clinical data has not been sufficiently addressed. In this work, the feasibility of interval model identification for the characterization of intra-patient variability is investigated in clinical data. The minimization of a composite cost index comprising: (1) the glucose envelope width predicted by the interval model, and (2) a Hausdorff-distance-based prediction error with respect to the envelope, is proposed. A cross-validation study is performed for the evaluation of the method using clinical data from 12 patients with type 1 diabetes who underwent four in-clinic mixed meal tests with standardized initial conditions.
+
+	\textbf{Methods}
+	\textbf{Data sets}
+	
+Twelve subjects with type 1 diabetes under CSII (male/female 3/9, age 41.8$±$7.3 years, diabetes duration 20$±$10 years, HbA1c 8.0$±$0.6\%, [mean$±$SD]) were monitored in their postprandial state on four occasions. On two occasions the patients received a mixed meal containing 40 g of CHO. On the other two occasions they ate a meal with the same relative macronutrients composition but with greater CHO content (100 g). For each meal, either a standard bolus or a computer-generated bolus-basal combination was administered following randomization [13]. Pre-prandial plasma glucose was set around 100 mg/dL by means of a manual feedback intravenous insulin infusion. Hypoglycemia was avoided by using intravenous glucose infusion in case the patient's glucose levels were decreasing rapidly towards hypoglycemic levels. Plasma glucose was measured for 5 hours after the meal, every 5 minutes the first two hours after the meal and every 10 minutes afterwards, using a reference method (YSI 2300 STAT Plus Glucose analyzer, Yellow Springs Instruments, Ohio, USA). Plasma insulin was also measured periodically (every 15 minutes the first two hours, and every 30 minutes afterwards) along all the duration of the experiment. To remove antibody-bound insulin, plasma was mixed with an equal volume of 30\% polyethylene glycol immediately after blood collection [23]. The local Ethical Committee approved the study and the patients gave the written consent.
+
+Due to the different sampling periods of the measurements, cubic spline interpolation was applied in order to get sample-per-minute data on all variables. Due to the high accuracy of YSI measurements [24] uncertainty modeling effort can be focused only in model inaccuracies and within-patient variability.
+
+	\textbf{Interval models}
+	
+Interval models represent model uncertainty as interval-valued parameters and have been successfully applied to robust analysis and control in diverse domains [16]. Identification of interval models has been traditionally addressed under the framework of bounded-error identification [17], i.e., the set of parameter values consistent with a given acceptable bound on the prediction error is computed:
+
+\begin{equation}
+\mathbb{P}=\left\{ \mathbf{p} \in \mathbb{R}^{n_p} \left| y(t_i ;\mathbf{p}) - y^{\ast}(t_i) \right| \leq e_i \right\}
+\label{eq:parameterset}
+\end{equation}
+	
+where $p$ is the parameter vector of dimension $n_p$, $y^{\ast}(t_i)$ and $y(t_i ;\mathbf{p})$ are the measurement and model prediction, respectively, at sample $i$ and $e_i$ is the acceptable prediction error bound. However, when large intra-patient variability is present no consistent parameter values will generally be found. If for the same meal and insulin dose the patient behaves very differently, no intersection between the acceptable output intervals will exist yielding an empty set for $\mathbb{P}$.
+
+However, robust predictions for therapeutical decisions can be achieved if the interval model is able to bound the patient's response, i.e., the experimental measurements should be included in the output envelope predicted by the model at each time instant $i$
+
+\begin{equation}
+y^{\ast}(t_i) \in y(t_i ;\mathbf{p}), \;\;\; \forall i \in I
+\label{eq:measurementscontained}
+\end{equation}
+	
+where $y(t_i ;\mathbb{P})=[\underline{y}(t_i ;\mathbb{P}),\overline{y}(t_i ;\mathbb{P})]$ stands for the interval prediction at time instant $i$ for the to-be-identified parameter set $\mathbb{P}$ and $I=\left\{1,...,n\right\}$ is the index set of the available measurements. In practice, a relaxation of the above problem may be needed, allowing for small errors with respect to the inclusion envelope due to noise in the measurements and compensation for non-modeled dynamics. 
+
+	\textbf{Model identification}
+	\textbf{Model}
+	
+The glucoregulatory model published by Hovorka et al. [25] was used in this work. The model has been extensively used in the context of glucose control, and was recently included in a simulation platform for in silico evaluation of controllers [26].
+
+When interval parameters are considered, the simulation of the model must produce a glucose envelope representing the set of possible glucose trajectories that the patient may exhibit according to the defined intra-patient variability. To this end, the interval simulators for the Hovorka model developed in [27] and [28] were used in this work. They provide a tight guaranteed envelope $[\underline{G} (t;\mathbb{P}),\overline{G} (t;\mathbb{P})]$ for uncertain model inputs and model parameters $\mathbb{P}$. 
+
+	\textbf{Identification method}
+
+ As stated in Section 2.2, interval parameter values P must be found so that the model output envelope bounds the measurements. Denoting as $G^{\ast}(t_i)$ the glucose measurement at time instant $i$, equation (2) can be rephrased as:
+
+\begin{equation}
+G^{\ast}(t_i) \in [\underline{G} (t;\mathbb{P}),\overline{G} (t;\mathbb{P})], \;\;\; \forall i \in I
+\label{eq:measurementscontained2}
+\end{equation}
+	
+Small errors with respect to the inclusion envelope will be allowed due to noise in the measurements and compensation for non-modeled dynamics, as already stated. Thus, in this work, optimization of a composite index is proposed for model identification. It comprises two components:
+
+\begin{itemize}
+
+	\item Envelope width - The glucose envelope width must be minimized in order to avoid trivial solutions with large predictions bands. It is computed as the maximum difference throughout the postprandial period of the upper and the lower bound of the interval model evaluation at time $t_i$:
+	\begin{equation}
+	J_w(\mathbb{P}):=\max_{i \in I}\left( \text{width} \left( [\underline{G} (t;\mathbb{P}),\overline{G} (t;\mathbb{P})] \right) \right) = \max_{i \in I} \left( \overline{G} (t;\mathbb{P})- \underline{G} (t;\mathbb{P})\right)
+	\label{eq:JW}
+	\end{equation}
+			
+	\item Prediction error - The number of measurements outside the predicted glucose envelope must be minimized and so has to be the error with respect to it. The error was computed here as the sum of squares of the Hausdorff distance $d_H$ between the samples and the predicted envelope:
+	\begin{align}
+	J_e(\mathbb{P}):=\sum\limits_{i=1}^n d_H^2 \left( G^{\ast}(t_i), [\underline{G} (t;\mathbb{P}),\overline{G} (t;\mathbb{P})] \right) \label{eq:JE} \\
+	d_H \left( G^{\ast}(t_i), [\underline{G} (t;\mathbb{P}),\overline{G} (t;\mathbb{P})] \right):=
+	\begin{cases}
+	0 & \text{if} \; G^{\ast}(t_i) \in [\underline{G} (t;\mathbb{P}),\overline{G} (t;\mathbb{P})] \\
+	G^{\ast}(t_i)-\overline{G} (t;\mathbb{P}) & \text{if} \; G^{\ast}(t_i) > \overline{G} (t;\mathbb{P}) \\
+	\underline{G} (t;\mathbb{P})-G^{\ast}(t_i) & \text{if} \; G^{\ast}(t_i) < \overline{G} (t;\mathbb{P}) \\
+	\label{eq:hausdorff}
+	\end{cases}
+	\end{align}
+
+\end{itemize}
+
+The cost index to be minimized is thus defined as:
+\begin{equation}
+	J_{we} (\mathbb{P}):=J_w (\mathbb{P})+\gamma \cdot J_e (\mathbb{P})		
+\label{eq:JWE}
+\end{equation}
+
+where $\gamma$ is a weighting factor between the minimization of the envelope width and the fitting error. A very small value for $\gamma$ yields to very small intervals for the identified model parameters $\mathbb{P}$ with loose data fitting, while large values of $\gamma$ provide good coverage of the data with large intervals for $\mathbb{P}$. The weight $\gamma$ has to be tuned a priori and it will define the degree of relaxation given to the optimization problem. In this paper, a battery of pilot identifications was run using several different weighting factors $\gamma$. Then, the authors decided to set $\gamma$=100 considering that the fitting results displayed a good compromise between the envelope width and data compliance.
+
+Minimization of the cost index was performed with the global optimization algorithm Evolution Strategy with Covariance Matrix Adaptation (CMAES) [29,30]. The optimization to be performed is a non-linear single objective minimization with linear restrictions in the parameters (intervals). CMAES performs very fast optimizations on a single objective with any number of optimization parameters. Unfortunately, the build released by Hansen et al. [30] does not implicitly consider restrictions neither in the outputs nor in the inputs, so they have to be integrated in the cost index. Interval parameters consist of two independent parameters, upper and lower bounds, where obviously all the lower bounds must be smaller than their respective upper bounds. These greater-or-equal restrictions were checked first in the evaluation of the optimization index. If any of the lower bounds were superior to its upper bound, the index was declared invalid (set to NaN), and penalized greatly in the search [30]. The final cost index is shown next:
+
+\begin{equation}
+J(\mathbb{P}):= \begin{cases}
+\text{NaN} & \text{if} \; \overline{p_i} < \underline{p_i} \\
+J_{we}(\mathbb{P}) & \text{otherwise}\\
+\end{cases}
+\label{eq:totalindex}
+\end{equation}	
+	
+were $\overline{p_i}$ and $\underline{p_i}$ represent the upper and lower bounds of the parameter $p_i$. 
+
+\textbf{Uncertain parameters}
+
+Meal absorption is a highly complex physiological process as demonstrated by dual and triple tracer studies. However, to date, only relatively simple models fitted for specific meals are available. Besides, estimation of carbohydrates intake by the patient is a big source of uncertainty. It is thus expected a great extent of uncertainty in model parameters $A_g$, $t_{maxG}$ and model input $D_g$.
+
+As the experimental data were taken under controlled conditions, it can be justified here to consider no misestimation of the grams of CHO ingested (real-valued $D_g$) eliminating a big confounder of uncertainty.
+
+Besides, two different time constants $t_{maxG40}$ and $t_{maxG100}$ were considered for the meals of 40 and 100 grams of carbohydrates, respectively, to account for possible non-linearity with respect to meal size. However, since only one meal of 40 g or 100 g would remain for identification considering that one day is left for validation purposes, variability in $t_{maxG40}$ and $t_{maxG100}$ cannot be expressed adequately by the available data, thus making their identification as intervals questionable. For this reason they were also considered real-valued. 
+Uncertainty in the gastrointestinal system was then considered as an interval scale factor $\alpha$ multiplying the glucose absorption rate $U_g(t)$. This means that an envelope is produced from the rate of appearance resulting from an identified gastrointestinal model with real-valued parameters. Simulation studies have demonstrated that this aggregation of uncertainty into a single parameter $\alpha$ may be considered equivalent to parametric uncertainty in $A_g$ and $t_maxG$ and similar data fitting capabilities are expected. Furthermore, this allows a significant reduction in the number of interval parameters in the identification problem, and thus in the computational cost.
+
+Description of uncertainty in the insulin and endogenous subsystems was considered in the insulin sensitivity parameters $S_{IT}$, $S_{ID}$ and $S_{IE}$, and the glucose transport among compartments $k_{12}$.
+
+Identification of physiological models often suffers from identifiability issues, especially when no tracer data is available and meal intake and insulin delivery is concomitant, as in this case. In order to test the ability of the method to properly characterize the source of uncertainty from only insulin and glucose data, two different scenarios were considered:
+
+\begin{enumerate}
+	\item In Scenario 1 implicit uncertainty in the gastrointestinal (interval value for $\alpha$), insulin and endogenous subsystems was considered.
+	\item In Scenario 2 only uncertainty in the insulin and endogenous subsystems was considered ($\alpha$=1).
+\end{enumerate}
+
+This is illustrated in Table \ref{tab:listparameters}. Parameters marked as ``Interval''  were identified as uncertain (interval values), while parameters marked as ``Real'' were identified as real-valued parameters. Parameters not listed or, listed as ``Fixed'' were not identified and maintained in their nominal values (extracted from [25]) throughout the identification and validation process.
+
+\begin{table}[hbtp]
+	\centering
+	\begin{tabular}{| c | c | c |}
+	\textbf{Parameters} & \textbf{Scenario 1} & \textbf{Scenario 2} \\
+	\hline
+	$S_{IT}$ & Interval & Interval \\
+  $S_{ID}$ & Interval & Interval \\
+	$S_{IE}$ & Interval & Interval \\
+	$k_{12}$ & Interval & Interval \\
+	$\alpha$ & Interval & Fixed \\
+	$t_{maxG40}$ & Real & Real \\
+	$t_{maxG100}$ & Real & Real \\	
+	$V_g$ & Real & Real \\		
+	\hline 
+	\end{tabular}
+\caption{List of parameters to be identified in each scenario. ``Interval'' stands for parameters identified with uncertainty. ``Real'' are traditional parameters identified. ``Fixed'' stands for parameters not being identified.}
+\label{tab:listparameters}
+\end{table}
+
+	\textbf{Cross-validation}
+	
+Out of the 4 days of monitoring available, only 3 were used for identification, while one day was kept apart for validation purposes (``leave-one-day-out'' cross-validation). A few pilot optimizations showed that identifications were much more accurate when the first 30 minutes of each postprandial period were excluded for fitting the data, which may be due to non-modeled dynamics.
+
+All possible permutations for the identification-validation days were used, obtaining a full cross-validation study for all the patients and all the postprandial periods. Henceforth, the different permutations are denoted by the validation day number. Thus, permutation 3 uses days 1, 2 and 4 for identification, and validates with day 3. All the permutations of identification-validation days were performed twice for testing the repeatability of the results.
+
+	\textbf{Evaluation of identifications}
+	
+Six different measures were computed from the identification and validation days in order to evaluate the goodness of fit and model prediction ability, respectively:
+
+\begin{enumerate}
+	\item Width [mg/dL]:  maximum width of the glucose envelope generated by the identified interval model. It represents the patient's uncertainty for the postprandial period 
+	\item Predictions [\%]: number of glucose measurements included inside the predicted glucose envelope.
+	\item MARDout [\%]: relative error of the samples that were not well predicted and fell out of the glucose envelope. It complements the Predictions measure. For example, if Predictions is low but MARDout is also low, the data may follow the dynamics of the model, but with an offset that forces the data out of the prediction band. 
+	\item MARDtot [\%]:  relative error for all the glucose measurements. The glucose samples correctly predicted count as error zero, according to the error definition in equation \ref{eq:hausdorff}. 
+	\item gMARDout [\%]: clinically-penalized relative error of the samples out of the glucose envelope. The clinical penalization was performed following the indications detailed by del Favero in [12] (see below).
+	\item gMARDtot [\%]: clinically-penalized relative error for all the glucose measurements.  Correctly predicted samples count as error zero. The penalization used was also the one proposed by del Favero.
+\end{enumerate}
+
+MARDout and MARDtot are relative errors based on the Mean Absolute Relative Difference with respect to the glucose envelope, defined as:
+
+\begin{equation}
+	MARD:=\frac{1}{N} \sum\limits_{i=1}^{N} \left| \frac{ d_H(G^{\ast}(t_i),[\underline{G} (t;\mathbb{P}),\overline{G} (t;\mathbb{P})])}{G^{\ast}(t_i)} \right| \cdot 100		
+\label{eq:mard2}
+\end{equation}
+where $d_H$ is the Hausdorff distance previously defined, and $N$ is the number of samples considered in the computation. For MARDout $N$ is equal to the number of samples outside the envelope, and for MARDtot $N$ is equal to the total number of samples in the postprandial period.
+
+gMARDout and gMARDtot are modified versions of MARDout and MARDtot so that they gain on clinical interpretability. Del Favero et al. [12] proposed a penalization on identification indexes where danger of hypoglycemia and hyperglycemia is associated with larger weights in the index. In this work, an extension to deal with glucose envelopes was defined as:
+
+\begin{equation}
+	gMARD:=\frac{1}{N} \sum\limits_{i=1}^{N} \left| iPen\left( G^{\ast}(t_i),[\underline{G} (t;\mathbb{P}),\overline{G} (t;\mathbb{P})]\right) \frac{ d_H(G^{\ast}(t_i),[\underline{G} (t;\mathbb{P}),\overline{G} (t;\mathbb{P})])}{G^{\ast}(t_i)} \right| \cdot 100		
+\label{eq:gmard}
+\end{equation}
+
+where
+
+\begin{equation}
+	iPen\left( G^{\ast}(t_i),[\underline{G} (t;\mathbb{P}),\overline{G} (t;\mathbb{P})]\right):= \begin{cases}
+	Pen\left(G^{\ast}(t_i),\underline{G} (t;\mathbb{P}) \right) & \text{if} \; G^{\ast}(t_i)<\underline{G} (t;\mathbb{P}) \\
+	Pen\left(G^{\ast}(t_i),\overline{G} (t;\mathbb{P}) \right) & \text{if} \; G^{\ast}(t_i)>\overline{G} (t;\mathbb{P}) \\
+	1 & \; \text{otherwise} \\
+	\end{cases}
+\label{eq:ipen}
+\end{equation}
+			
+and $Pen:\mathbb{R} \times \mathbb{R} \rightarrow \mathbb{R}$ is del Favero's penalization function. As in the previous case, for gMARDout $N$ is equal to the number of samples outside the envelope, and for gMARDtot $N$ is equal to the total number of samples in the postprandial period. 
+
+Comparison between gMARD and MARD indexes provides information on the medical risk of inaccurate model predictions. No difference between the indexes means no risk associated to the patient by definition, since it implies a unity value for the penalization function Pen in equation \ref{eq:ipen}. 
+
+In order to consider an identification successful, it has to present good prediction capabilities resulting in a high percentage of samples predicted and consequently a small MARD for validation data. Clinical indexes should also not differ from their classical counterparts. 
+
+Besides, in order to discard trivial solutions, small envelope widths are expected in a successful identification, since a large enough band will always predict all the samples. Nonetheless, large widths are not discouraged if the variability of the patient is also large. In order to account for this fact, an envelope fitness measure was computed as
+
+\begin{align}
+f(t_i):=\max\left[\min_d \left| G^{\ast}(t_i) - \overline{G} (t;\mathbb{P}) \right|, \min_d \left| G^{\ast}(t_i)-\underline{G} (t;\mathbb{P}) \right|\right] \label{eq:env_fitness} \\
+env\_fit:= \frac{1}{N} \sum\limits_{i=1}^{N} f(t_i) \label{eq:env_fitness2}
+\end{align}
+	
+where $G^{\ast}(t_i)$ is the measured data, $\underline{G} (t;\mathbb{P})$ and $\overline{G} (t;\mathbb{P})$ the lower/upper bound of the glucose envelope, all of them at time $t_i$ for day $d$. The rationale is that the envelope width is considered non-overestimated when the upper and lower interval glucose bounds actually fit the data for some postprandial period. In this case, it is assumed that the variability of the patient was well captured. This is depicted in Figure \ref{fig:overstimation}. For every $t_i$ the minimum distance from the data to the upper envelope bound among all the postprandial periods d is computed, and similarly for the lower bound, considering finally the worst case. The average with respect to time $t_i$ of worst-case distances is then considered as an indicator of the fitness of the envelope width to data. As illustration, $env_fit$=10 mg/dL indicates that for any time instant $t_i$, there exists a day d such that the discrepancy between the data and the upper/lower bound is less than or equal to 10 mg/dL in average. 
+
+\begin{figure}[hbtp]
+\centering
+\epsfig{file=Figures/overstimation.png, width=0.5\textwidth}\caption{Graphic description of the envelope fitness index. Three postprandial periods are displayed for both YSI data (green) and glucose envelopes (blue). Distances of the data to the envelope are displayed, and the minimum distances to the upper and lower envelopes are highlighted. The average distance along time defines the envelope width fitness to data.}
+\label{fig:overstimation}
+\end{figure}
+
+All measures listed above have to be considered simultaneously when evaluating an identification experiment. An identification with low predicted samples does not mean a bad identification result if it simultaneously presents a very low relative error.
+Mean, median, standard deviation and maximum/minimum values of the above measures for all the patients were reported. All significances were calculated using non-parametric Fisher's resampling test.
+
+	\textbf{Results}
+	
+The different evaluation measures for the cross-validation study are reported in Table \ref{tab:results2scenarios}. Evaluations on the identification days are used to test goodness of fit, while the evaluation on the validation set is a good representation of the predictability of the method and thus the overall performance of the identifications. The identified interval and real-valued parameters are reported in Table 3. Mean and median values for the midpoint and width of the intervals are shown, for the sake of simplicity. Median values are a good estimation of the magnitude of the identification results as they better filter outlier and are better estimators of the distribution expectancy for skewed distributions.
+
+\begin{sidewaystable}[hbtp]
+	\centering
+	\begin{tabular}{| c | c | c | c | c | c | c | c |}
+	\multicolumn{1}{c}{Scenario} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{Width} & \multicolumn{1}{c}{Prediction} & \multicolumn{1}{c}{MARDout} & \multicolumn{1}{c}{MARDtot} & \multicolumn{1}{c}{gMARDout} & \multicolumn{1}{c}{gMARDtot} \\
+	\multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{[mg/dL]} & \multicolumn{1}{c}{[\%]} & \multicolumn{1}{c}{[\%]} & \multicolumn{1}{c}{[\%]} & \multicolumn{1}{c}{[\%]} & \multicolumn{1}{c}{[\%]} \\
+	\hline
+	\multicolumn{8}{c}{Identification days}\\
+	\hline
+	\multirow{4}{*}{1} & mean & 87.7 & 77.9 & 5.79 & 1.22 & 5.92 & 1.26 \\
+	\cline{2-8}
+  & SD & 39 & 7.2 & 6.1 & 1.07 & 6.11 & 1.09 \\
+	\cline{2-8} 
+	& median & 81.2 & 78.9 & 4 & 0.92 & 4.11 & 0.94 \\
+	\cline{2-8} 
+	& max/min & 187.9/40.4 & 92.2/63.6 & 32.14/1.37 & 4.84/0.24 & 32.16/1.38 & 4.85/0.24 \\
+	\hline 
+	\multirow{4}{*}{2} & mean & 94.8 & 78.4 & 6.56 & 1.35 & 6.7 & 1.38 \\
+	\cline{2-8} 
+  & SD & 42.5 & 6.8 & 9.01 & 1.64 & 9.01 & 1.64 \\
+	\cline{2-8} 
+	& median & 89.9 & 78.1 & 3.9 & 0.85 & 4.08 & 0.88 \\
+	\cline{2-8} 
+	& max/min & 218.3/41.2 & 93.4/64.7 & 48.84/1.67 & 7.89/0.25 & 48.87/1.67 & 7.89/0.25 \\
+	\hline
+	\multicolumn{8}{c}{Validation days}\\
+	\hline
+	\multirow{4}{*}{1} & mean & 78.8 & 53.5 & 12.23 & 7.61 & 13.46 & 8.51 \\
+	\cline{2-8}
+  & SD & 38.4 & 30.1 & 8.83 & 7.88 & 10.62 & 9.72 \\
+	\cline{2-8}
+	& median & 66.4 & 52.8 & 11.22 & 5.56 & 11.97 & 5.59 \\
+	\cline{2-8}
+	& max/min & 205.1/29.3 & 100/0.7 & 32.93/0 & 30.41/0 & 48.49/0 & 44.77/0 \\
+	\hline 
+	\multirow{4}{*}{2} & mean & 83.9 & 54.9 & 12.66 & 8.09 & 13.91 & 8.95 \\
+	\cline{2-8} 
+  & SD & 40.8 & 31.9 & 10.3 & 9.06 & 11.69 & 10.43 \\
+	\cline{2-8} 
+	& median & 79.1 & 57 & 9.65 & 5.45 & 12.14 & 5.84 \\
+	\cline{2-8} 
+	& max/min & 222/34.6 & 100/0.3 & 37.87/0 & 31.19/0 & 43.42/0 & 39.57/0 \\
+  \hline 
+	\end{tabular}
+\caption{Results for both scenarios for the 3 identification days with all the possible permutations, and the validation days.}
+\label{tab:results2scenarios}
+\end{sidewaystable}
+
+%----------------------------------------------------------------------------POR AQUÍ ME QUEDÉ------------------------------------------------------------------------------		
+
+\begin{table}[hbtp]
+	\centering
+	\begin{tabular}{| c | c | c | c | c | c | c | c |}
+	
+	\multicolumn{3}{c}{Interval} & $S_{IT} \times 10^{-3}$ & $S_{ID} \times 10^{-4}$ & $S_{IE} \times 10^{-2}$ & $k_{12} \times 10^{-2}$ & \multirow{2}{*}{$\alpha$} \\
+	\multicolumn{3}{c}{parameters} & $\left[mU/min\cdot L\right]$ & $\left[mU/min\cdot L\right]$ & $\left[mU/min\cdot L\right]$ & $\left[min^{-1}\right]$ & \\
+	\multirow{4}{*}{Scenario 1} & Mid & mean & 5.05 & 6.08 & 4.43 & 6.43 & 1.12 \\
+	& point & SD & 1.32 & 3.06 & 2.11 & 2.45 & 0.4 \\
+	& \multirow{2}{*}{Width} & mean & 2.39 & 0.05 & 0.45 & 1.16 & 0.02 \\
+	& & SD & 1.62 & 0.25 & 0.9 & 2.01 & 0.08 \\
+	\multirow{4}{*}{Scenario 1} & Mid & mean & 5.04 & 6.05 & 4.12 & 6.72 & \multirow{4}{*}{fixed} \\
+	& point & SD & 1.24 & 2.83 & 1.92 & 2.57 & \\
+	& \multirow{2}{*}{Width} & mean & 2.86 & 0.04 & 0.39 & 1.09 & \\
+	& & SD & 1.53 & 0.2 & 0.77 & 2.16 & \\
+	\multicolumn{3}{c}{Nominal value} & 5.12 & 8.2 & 5.2 & 6.6 & 1 \\
+  \multicolumn{3}{c}{Real-valued parameters} & $t_{maxG40} [min]$ & $t_{maxG100} [min]$ & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\
+	\multirow{2}{*}{Scenario 1} & \multicolumn{2}{c}{mean} & 85.1 & 98.8 & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\
+	 & \multicolumn{2}{c}{SD} & 68.5 & 31.4 & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\
+	\multirow{2}{*}{Scenario 2} & \multicolumn{2}{c}{mean} & 87.2 & 99.2 & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\
+	 & \multicolumn{2}{c}{SD} & 66.7 & 39.8 & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\
+	\multicolumn{3}{c}{Nominal value} & 40 & 40 & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\
+	
+\caption{Identified parameters for both scenarios. Nominal values were extracted from \cite{hovorka2004nonlinear}.}
+\label{tab:identifiedparam}
+\end{table}
+

@@ -1,0 +1,281 @@
+\chapter{Identification with ambulatory data: Preliminary results}
+\label{sec:IdentificationWithAmbulatoryDataPreliminaryResults}
+
+Clinical validation of experiment design with modified Panunzi's model started in the Clinical University Hospital of Valencia the 20th of January, 2010, with the first week of monitoring of a diabetic patient. 
+
+Every week of monitoring is organized in the following way:
+\begin{itemize}
+	\item Day 1 - Insertion of the continuous sensor. Warm-up period to ensure stabilization of the sensor signal.
+	\item Days 2, 3 and 4 - Identification period. At the patient's usual lunch time, the patient is instructed to follow the experimental protocol described in the previous chapter. In particular, they are advised to avoid any snack or additional insulin administration during the five hours period following the meal, unless some harmful event would occur to the patient, such as an hypoglycemic event. 
+	\item Days 5, 6 and 7 - Validation period. The patient follows her/his usual treatment without any shift of insulin administration, for validation purposes. The menus from which the patients can choose are the same of the identification period, reducing variability related to the meal composition.
+\end{itemize}
+
+The results that are shown next are only preliminary results, and only are reviewed qualitatively for identification purposes. The complications related to experimental data acquisition in diabetic patients are highlighted in every case. So far 5 patients have been monitored, some of them several weeks, and others only 1 week. The maximum number of weeks monitored in the same person is 4.% Aquí habría que introducir una tabla con todos los pacientes especificando sus semanas de monitorización y demás caracteristicas
+
+The results shown next consist of two graphs for each week of monitoring: the first one are the three meals of the identification period; the second graph is the data corresponding to the validation period, considering uncertainty. The response of the model considering uncertainty is calculated by means of interval analysis of the models explained before, and only 2 ``parameters'' are being considered uncertain:
+\begin{itemize}
+	\item Meal size is considered with a 10\% of uncertainty. Meal size is not a parameter of the model, but the estimation of the amount of carbohydrates is usually done by the patient, incurring in severe approximations of the right size of the meal being ingested.
+	\item $K_{xgl}$, or insulin sensitivity, is considered to vary in a 20\% from its identified value. Indeed, in daily life of people with diabetes insulin sensitivity can change significantly depending on many factors such as the intensity of physical activity, health conditions, emotional stress, and so on.
+\end{itemize}
+If the uncertainty considered are to be different in any case, it will be explicitly stated. Based on each patient home glucose monitoring diary, if high variability in the meal size is observed, or if unexpected/unplanned events potentially influential for $K_{xgl}$ are reported, then greater variability has been considered to obtain more robust predictions.
+
+Considering uncertainty for validation purposes is one of the main outcomes of this thesis. In the diabetes context, great variability of the parameters identified is expected. The ambulatory conditions on which the monitoring of patients happen, makes the data to be extremely noisy, with unplanned events and errors in the treatments proposed. The combination of these sources of error invalidates identifications performed almost immediately.
+
+There exist several ways to overcome the lack of fidelity of the identification to the real process. In the continuous (real-time) control of diabetes, adaptive algorithms for control seem to be necessary in order to follow the patient parameters variations. Consecutive model identifications may be performed every day improving data fitting and prediction capabilities of the model. In an off-line study of several days like the one of this thesis, only one identification may be performed, considering the limitations exposed before (same meal composition, same meal time...). The variations of the patients in this case cannot be copped with successive identifications or adaptive algorithms, but robust controllers have to be developed. Robust control needs of a quantification of the error expected on the model, and this can be done by considering uncertainty on the parameters identified.
+
+Each one of the following sections corresponds to a different patient and his/her number of weeks of monitoring. The patients are designated anonymously with their initials.
+
+\section{Monitored Data from Patients}
+\label{sec:MonitoredDataFromPatients}
+
+\subsection{Patient HMJ}
+\label{sec:PatientHMJ}
+
+HMJ was monitored during 4 weeks (not consecutive), following the protocol described explicitly. First week's identification period is shown in Figure \ref{fig:Identification_HMJ1}. Each day's postprandial period of 5 hours is separated by vertical dashed lines.
+
+\begin{figure}[hbtp]
+\centering
+\epsfig{file=Figures/Identification_HMJ1.png, width=\textwidth}\caption{HMJ's first week's identification period}
+\label{fig:Identification_HMJ1}
+\end{figure}
+
+The first day's meal the patient ate the meal configuration 1. In this configuration, the insulin bolus was given 30 minutes before the meal time (as shown in the figure), and the meal size was 100 grams. The second and third days the patient ate the meal configuration 2. In this second configuration the insulin bolus is delayed 120 minutes and the patient is given to choose from a 40 or 60 grams meal. It's worth remembering that regardless the meal size, the meal composition remains constant. The same meal configuration is used for all the patients.
+
+There is a clear difference between the dynamics of the second and third days, and the first one, as the experiment design predicted. The rising of glucose after the meal is though completely faded by the insulin dose. The last day shows an illustrating example of the problems that can be found durign experimental data acquisition. The black dots shown in the graph are the capillary measures of glucose performed by the patient and introduced in the CGMS as calibration points. In the middle of the third day, the patient consecutively introduced two very separated calibration points in the sensor, misleading the signal of the sensor, and consequently, polluting the source of the identification. Despite the human errors related to the monitoring, the identification can be considered successful. First week's validation period is shown in Figure \ref{fig:Validation_HMJ1_intervalar}.
+
+\begin{figure}[hbtp]
+\centering
+\epsfig{file=Figures/Validation_HMJ1_intervalar.png, width=\textwidth}\caption{HMJ's first week's validation period}
+\label{fig:Validation_HMJ1_intervalar}
+\end{figure}
+
+The ideal situation would be to have the continuous line of the monitor completely covered by the band of prediction of the model. In practice this would almost never happen. In the case of the first week of validation for HMJ, the CGMS was very noisy (specially the third day), and the validation was not satisfactory. The lack of similarity in the first day can be attributed to a even bigger (than 20\%) variation of insulin sensitivity, making the patient more resistant to insulin, and making blood glucose to be higher at any time. The second day presents a delay of 100 minutes in the glucose absorption, which is not possible to simulate with the model. The third day noise makes the data unreadable.
+
+The second week's identification period is shown in Figure \ref{fig:Identification_HMJ2}.
+
+\begin{figure}[hbtp]
+\centering
+\epsfig{file=Figures/Identification_HMJ2.png, width=\textwidth}\caption{HMJ's second week's identification period}
+\label{fig:Identification_HMJ2}
+\end{figure}
+
+The data has been fitted with great success in this case. The first and second days correspond to meal configuration 2, and the third day meal configuration 1 was eaten. The second day of identification shows an error in the calibration data of the sensor. There is a point of capillary glucose of 119 mg/dl, while the sensor is more than 100 mg/dl above that level. Given that no correction was done by the CGMS of the signal of the estimation of the blood glucose, it was assumed that the monitor discarded that calibration point. Other outlying calibration point occurs in the third day, but in this case the error is smaller (50 mg/dl).
+
+The validation days for that week are shown in Figure \ref{fig:Validation_HMJ2_intervalar}.
+
+\begin{figure}[hbtp]
+\centering
+\epsfig{file=Figures/Validation_HMJ2_intervalar.png, width=\textwidth}\caption{HMJ's second week's validation period}
+\label{fig:Validation_HMJ2_intervalar}
+\end{figure}
+
+The first day of validation is wonderfully fitted, but the other two days show longer absorption profiles than expected, and the patient has higher blood glucose concentrations than the predicted by the model, despite the fact that the five hours prediction was within boundaries in all the cases.
+
+The third week's identification period of monitoring can be seen in Figure \ref{fig:Identification_HMJ3}.
+
+\begin{figure}[hbtp]
+\centering
+\epsfig{file=Figures/Identification_HMJ3.png, width=\textwidth}\caption{HMJ's third week's identification period}
+\label{fig:Identification_HMJ3}
+\end{figure}
+
+In this case the three meals eaten were those of configuration 2. The fitting is quite satisfactory, but it tends to predict hypoglycemias in a five hours time that usually do not happen. The third day fitting is perfect. The case of a three repeated meals with the same configuration does not follow the experiment design findings, and as such, not very good identification is expected, and the validation period should not be very well predicted.
+
+The validation meals and their postprandial periods can be seen in Figure \ref{fig:Validation_HMJ3_intervalar}.
+
+\begin{figure}[hbtp]
+\centering
+\epsfig{file=Figures/Validation_HMJ3_intervalar.png, width=\textwidth}\caption{HMJ's third week's validation period}
+\label{fig:Validation_HMJ3_intervalar}
+\end{figure}
+
+The Second day is very well predicted, the first one only in the first two hours, and the third day prediction is not good. The first and third days predictions end in fictional hypoglycemia, while the patient is actually in the safe area. This fact makes the model to predict hypoglycemias in the fourth or fifth hours of the postprandial period. This is an error introduced by the lack of configuration 1 meals in the identification period, and should be avoided.
+
+The fourth day's identification meals are shown in Figure \ref{fig:Identification_HMJ4}.
+
+\begin{figure}[hbtp]
+\centering
+\epsfig{file=Figures/Identification_HMJ4.png, width=\textwidth}\caption{HMJ's fourth week's identification period}
+\label{fig:Identification_HMJ4}
+\end{figure}
+
+The first and the second days correspond to configuration 2 meals, and the third day a configuration 1 meal was eaten. The patient ate the same the first and second days, and a clear difference in the monitor's prediction can be seen. Model's fitting is quite good for both days, and a little worse for the third day, but yet satisfactory.
+
+The validation days can be seen in Figure \ref{fig:Validation_HMJ4_intervalar}.
+
+\begin{figure}[hbtp]
+\centering
+\epsfig{file=Figures/Validation_HMJ4_intervalar.png, width=\textwidth}\caption{HMJ's fourth week's validation period}
+\label{fig:Validation_HMJ4_intervalar}
+\end{figure}
+
+The first day of validation is very well predicted. The second day, the CGMS had a strange behavior, not caused by any erroneous calibration points as before, but maybe because of external cause related to the patient. The third day's prediction is quite good, despite the fact that the prediction in a 5 hours horizon is overestimating blood glucose.
+
+\subsection{Patient ACN}
+\label{sec:PatientACN}
+
+This patient was the second one to be monitored, and the last of the patients that were subjected to 4 weeks of monitoring. The first week's identification meals are shown in Figure \ref{fig:Identification_ACN1}.
+
+\begin{figure}[hbtp]
+\centering
+\epsfig{file=Figures/Identification_ACN1.png, width=\textwidth}\caption{ACN's first week's identification period}
+\label{fig:Identification_ACN1}
+\end{figure}
+
+The two first meals are of configuration 1, and the third day lunch was a configuration 2 meal. The dynamics observed describe very well the difference on the configuration of the meal. In the case of configuration 1, blood glucose does not rise after the meal time as it does in configuration 2 meal. This happens because, in configuration 1 meals, the peak of insulin concentration in plasma occurs at the same time that the meal starts being absorbed (45-75 minutes), which causes the blood glucose to be constant at any time. Actually, a tighter control of blood glucose is observed in configuration 1 meals than in standard treatments, or in configuration 2 meals, where there is a period of 2 hours without any control at all.
+
+A clear difference in the dynamics of blood glucose can be see by comparing the two first days. The rising tendency in 5 hours after the meal in the first day is completely the opposite than it is in the second day, where the tendency is to drop down. This difference can occur due to variations in the insulin sensitivity of the patient or in other physiologic parameters (metabolic condition of the patient), or maybe due to a sensor dysfunction. Indeed, the first day a calibration point was introduced in the post-prandial period, whereas in the second no calibration was performed. This may have affected the sensor's tendency.
+
+The validation period is shown in Figure \ref{fig:Validation_ACN1_intervalar}.
+
+\begin{figure}[hbtp]
+\centering
+\epsfig{file=Figures/Validation_ACN1_intervalar.png, width=\textwidth}\caption{ACN's first week's validation period}
+\label{fig:Validation_ACN1_intervalar}
+\end{figure}
+
+Validation is very satisfactory. In the last day, prediction is good up to the fourth hour, where the tendency of the blood glucose is the opposite to the predicted by the model. This corresponds to the same situation observed during the identification days, even with the presence of a calibration point at the end of the third day. The causes can again be various, such as a the effect of that calibration point, or maybe some different conditions of the patient.
+
+The second week's identification period is shown in Figure \ref{fig:Identification_ACN2}.
+
+\begin{figure}[hbtp]
+\centering
+\epsfig{file=Figures/Identification_ACN2.png, width=\textwidth}\caption{ACN's second week's identification period}
+\label{fig:Identification_ACN2}
+\end{figure}
+
+In this second week of monitoring, the patient ate two configuration 1 meals in the first two days, and a configuration 2 meal in the last day. The fitting is very satisfactory, specially in the first and third days.
+
+The validation period is shown in Figure \ref{fig:Validation_ACN2_intervalar}.
+
+\begin{figure}[hbtp]
+\centering
+\epsfig{file=Figures/Validation_ACN2_intervalar.png, width=\textwidth}\caption{ACN's second week's validation period}
+\label{fig:Validation_ACN2_intervalar}
+\end{figure}
+
+The model seems prone to predict hyperglycemias in a five hours time lapse, but it is usually correct in its prediction. The exception is the second day of validation, in which the tendency is completely different to the other days.
+
+The third week's monitoring results and fitting are shown in Figure \ref{fig:Identification_ACN3}.
+
+\begin{figure}[hbtp]
+\centering
+\epsfig{file=Figures/Identification_ACN3.png, width=\textwidth}\caption{ACN's third week's identification period}
+\label{fig:Identification_ACN3}
+\end{figure}
+
+The patient repeated three times the configuration 1 meal in this case. This is detrimental to the model identification shown by the experiment design, but still, the fitting is very good. It is very interesting to see that, despite the three meals were identical in composition, the absorption of glucose in the first day is much smaller (or slower) than in the other two days, causing a lower fall in the blood glucose.
+
+The validation period for this third week is shown in Figure \ref{fig:Validation_ACN3_intervalar}.
+
+\begin{figure}[hbtp]
+\centering
+\epsfig{file=Figures/Validation_ACN3_intervalar.png, width=\textwidth}\caption{ACN's third week's validation period}
+\label{fig:Validation_ACN3_intervalar}
+\end{figure}
+
+Validation is not very good in this case. Only the second day is included in the band of the simulation of the model. The other two days describe dynamics very different to the predictions of the model. These problems in the validation may be caused by the fact that only configuration 1 meals are identified in the identification period. This can cause problems in identifiability of the model, as it has been proven in simulation, but also, it the three meals of the identification period follow similar dynamics, the identification of the postprandial model will give a model that mimics that dynamic, and no other. This is overfitting the data of the experiment. For example in the present case, all the days of identification have the tendency of rising the blood glucose at the end of the postprandial period. The model imitates this behavior, even in the case of normal treatments, which is obviously not a physiological behavior of the patient.
+
+The fourth week of identification is shown in Figure \ref{fig:Identification_ACN4}.
+
+\begin{figure}[hbtp]
+\centering
+\epsfig{file=Figures/Identification_ACN4.png, width=\textwidth}\caption{ACN's fourth week's identification period}
+\label{fig:Identification_ACN4}
+\end{figure}
+
+The first day the patient ate a meal of configuration 1, and two configuration 2 meals the second and third days. Data fitting is very good for the first and third days, but deficient in mimicking the dynamic and the 5 hours prediction of the second day.
+
+The validation is shown in Figure \ref{fig:Validation_ACN4_intervalar}. This validation was done increasing the uncertainty of the meal to a 20\% of the original value, and a 30\% in the insulin sensitivity, as explained before.
+
+\begin{figure}[hbtp]
+\centering
+\epsfig{file=Figures/Validation_ACN4_intervalar.png, width=\textwidth}\caption{ACN's fourth week's validation period}
+\label{fig:Validation_ACN4_intervalar}
+\end{figure}
+
+The bigger uncertainty in the parameters creates broader bands in the model simulation. The validation of the second and third days is successful, but the first day's tendency is completely different. Also, there is a fictional peak in the first day monitoring, caused by an error in the sensor.
+
+\subsection{Patient VMD}
+\label{sec:PatientVMD}
+
+The third patient monitored, VMD, has been only monitored for one week, and is still being monitored. The only week of monitoring, and it's identification period is shown in Figure \ref{fig:Identification_VMD1}.
+
+\begin{figure}[hbtp]
+\centering
+\epsfig{file=Figures/Identification_VMD1.png, width=\textwidth}\caption{VMD's first and only week's identification period}
+\label{fig:Identification_VMD1}
+\end{figure}
+
+The patient ate a configuration 1 meal the second day, and two configuration 2 meals the other days. The data fitting is pretty good for the first two days, and the dynamics are well identified, even though in the third day the peak of glucose is much higher in the monitor than in the prediction of the model.
+
+The patient overcharged the sensor with calibration points, like in the second day, in which there are 3 consecutive capillary measurements, causing corrections in the signal, and disturbing the dynamics of the sensor algorithms. But despite that, the results are satisfactory.
+
+The validation period is shown in Figure \ref{fig:Validation_VMD1_intervalar}.
+
+\begin{figure}[hbtp]
+\centering
+\epsfig{file=Figures/Validation_VMD1_intervalar.png, width=\textwidth}\caption{VMD's first and only week's validation period}
+\label{fig:Validation_VMD1_intervalar}
+\end{figure}
+
+Hyperglycemia is predicted by the model at a five hours time in all the cases. The second and the third days are fitted quite well, and the first one, in the first two hours, is well predicted too. The influence of unexpected calibration points is clearly seen in the first and the second days. The tendency of the signal is clearly modified at the time of the calibration measurement in order to adjust to that data point, and that makes the signal of the sensor to get out of the band predicted by the model.
+
+\subsection{Patient SAR}
+\label{sec:PatientSAR}
+
+Patient SAR was the fourth patient to be monitored, and only one week has been monitored so far. More monitoring week are scheduled in the following months. The identification period is shown in Figure \ref{fig:Identification_SAR1}.
+
+\begin{figure}[hbtp]
+\centering
+\epsfig{file=Figures/Identification_SAR1.png, width=\textwidth}\caption{SAR's first and only week's identification period}
+\label{fig:Identification_SAR1}
+\end{figure}
+
+The fitting of the model is very unsatisfying. It is expected the validation to be worse. The causes can be various, such as invalid calibration points, extreme noise influence, or bad use of the monitor from the patient. Especially bad is the last day of fitting, predicting a drop of the blood glucose down to 100 mg/dl, and the patient being actually in a level of 200 mg/dl.
+
+The validation is shown in Figure \ref{fig:Validation_SAR1_intervalar}.
+
+\begin{figure}[hbtp]
+\centering
+\epsfig{file=Figures/Validation_SAR1_intervalar.png, width=\textwidth}\caption{SAR's first and only week's validation period}
+\label{fig:Validation_SAR1_intervalar}
+\end{figure}
+
+The first day the patient's glucose rises up to 350 mg/dl, even with the traditional treatment, and the model is not able to predict that behavior. The other two days of validation are poorly validated. The last day the patient stopped the monitor in the fourth hour of the postprandial period, leaving the last day of validation without all the data required.
+
+\subsection{Patient PGV}
+\label{sec:PatientPGV}
+
+Last patient in the study so far was PGV, being monitored only for one week. The results of the monitoring are shown, for the identification period, in Figure \ref{fig:Identification_PGV1}.
+
+\begin{figure}[hbtp]
+\centering
+\epsfig{file=Figures/Identification_PGV1.png, width=\textwidth}\caption{PGV's first and only week's identification period}
+\label{fig:Identification_PGV1}
+\end{figure}
+
+The patient ate two configuration 1 meals, the first and the third days of the identification period, and a configuration 2 meal the second day. The fitting of the second day is very good, but the tendencies in the first and the third days in the last hour of the postprandial period are not well imitated. 
+
+The validation period can be seen in Figure \ref{fig:Validation_PGV1_intervalar}.
+
+\begin{figure}[hbtp]
+\centering
+\epsfig{file=Figures/Validation_PGV1_intervalar.png, width=\textwidth}\caption{PGV's first and only week's validation period}
+\label{fig:Validation_PGV1_intervalar}
+\end{figure}
+
+Validation, despite having broad bands for the simulations, is quite poor. The second day the calibration point seems to affect the sensor signal once again. Also, the behavior of the patient in the last hour, in which the glucose seems to start rising, is not reproduced by the model. In the fourth or fifth hour, the digestive process is likely to be finished, and as such, no income of glucose from the intestine is happening. Plus, the insulin bolus is supposed to be totally absorbed at that time. That tendency of increasing glucose seen in almost every day of monitoring have to be then caused by a lack of basal insulin in the patient in the postprandial period. This does not excuse, though, the bad identification of this patient in particular, but it shows how comparing the results of an identified model can be beneficial for understanding the metabolic state of the patient and his/her treatments.
+
+\section{Discussion}
+\label{sec:Discussion}
+
+The first conclusion drawn out of the first weeks of monitoring is that the experimental factor is the most relevant issue, moreover when speaking of real patients. The importance of following the experimental design should be clearly explained to the patients, who may be also advised to report any deviation from the protocol. This is clearly shown in the patients with more than 1 week of monitoring. In the first week, many errors are committed by the patient, such as wrong calibration points, stopping the insulin pump at the wrong moment, or administering the next insulin bolus before the postprandial monitoring ends. Those problems are less frequent when the patient feels familiar with the device and also due to the identification and elimination of the most common errors (by instruction to the patients) by the clinical staff.
+
+Experimental design and identification from real data really helps understanding the model used for simulating patients. Very complex models were discarded from the beginning of the experiment for practical reasons in the implementation and lack of identifiability. However, there are different behaviors that the simpler models can not mimic. Independently identify the dynamics of those behaviors, and reflecting them into the equations of the model is the aim of modeling. It is not possible to do it without the experimental experience of observing the monitoring and identification of the postprandial responses of the patients. 
+
+The identification process has remained unchanged for all the patients analyzed. The identification process might be improved by adapting it to each case independently. Also, it is possible by varying the matrix of weighting $Q_{i}$, as seen in equation \ref{eq:quadraticindex} to adjust the model to better conditioned periods of time. This way, the noisy data periods can be avoided to be fitted, or maybe the data can be fitted better in the early hours of the postprandial period rather than the last hours. It makes sense to fit better the periods in where only one sub-model is being perturbed, like for example, in the case of advancing 30 minutes the insulin bolus, adjusting better those 30 minutes.
+
+As a final remark, the identification is satisfactory. Data fitting is usually excellent. The validation period is trickier to simulate for the current models in literature. Nevertheless, in many cases, two out of three postprandial periods were described by the identified model of the same patient, and in almost all the cases, at least one day was well described by adding uncertainty to parameters.
+
+%Para la tesis habría que comparar los diferentes modelos para cada paciente.
